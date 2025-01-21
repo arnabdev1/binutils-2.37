@@ -1,3 +1,4 @@
+// modified for va fuzz
 /* size.c -- report size of various sections of an executable file.
    Copyright (C) 1991-2021 Free Software Foundation, Inc.
 
@@ -116,13 +117,13 @@ usage (FILE *stream, int status)
 
 static struct option long_options[] =
 {
-  {"common", no_argument, &show_common, 1},
-  {"format", required_argument, 0, OPTION_FORMAT},
-  {"radix", required_argument, 0, OPTION_RADIX},
-  {"target", required_argument, 0, OPTION_TARGET},
-  {"totals", no_argument, &show_totals, 1},
-  {"version", no_argument, &show_version, 1},
-  {"help", no_argument, &show_help, 1},
+  // {"common", no_argument, &show_common, 1},
+  // {"format", required_argument, 0, OPTION_FORMAT},
+  // {"radix", required_argument, 0, OPTION_RADIX},
+  // {"target", required_argument, 0, OPTION_TARGET},
+  // {"totals", no_argument, &show_totals, 1},
+  // {"version", no_argument, &show_version, 1},
+  // {"help", no_argument, &show_help, 1},
   {0, no_argument, 0, 0}
 };
 
@@ -150,8 +151,8 @@ main (int argc, char **argv)
   if (bfd_init () != BFD_INIT_MAGIC)
     fatal (_("fatal error: libbfd ABI mismatch"));
   set_default_bfd_target ();
-
-  while ((c = getopt_long (argc, argv, "ABGHhVvdfotx", long_options,
+  // REMOVED HhVvf
+  while ((c = getopt_long (argc, argv, "ABGdotx", long_options,
 			   (int *) 0)) != EOF)
     switch (c)
       {
