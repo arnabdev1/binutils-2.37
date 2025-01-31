@@ -1,3 +1,4 @@
+// argv
 // modified for VA Fuzz
 /* objcopy.c -- copy object file from input to output, optionally massaging it.
    Copyright (C) 1991-2021 Free Software Foundation, Inc.
