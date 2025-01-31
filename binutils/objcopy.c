@@ -4685,7 +4685,7 @@ strip_main (int argc, char *argv[])
   char *output_file = NULL;
   bool merge_notes_set = false;
 
-  while ((c = getopt_long (argc, argv, "MSpgxXvwDU",
+  while ((c = getopt_long (argc, argv, "I:O:MSpgxXvwDU",
 			   strip_options, (int *) 0)) != EOF)
     {
       switch (c)
@@ -5082,7 +5082,7 @@ copy_main (int argc, char *argv[])
   struct stat statbuf;
   const bfd_arch_info_type *input_arch = NULL;
 
-  while ((c = getopt_long (argc, argv, "MSpgxXvwDU",
+  while ((c = getopt_long (argc, argv, "I:O:MSpgxXvwDU",
 			   copy_options, (int *) 0)) != EOF)
     {
       switch (c)
