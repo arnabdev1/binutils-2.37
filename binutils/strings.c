@@ -1,4 +1,3 @@
-// modified for VA Fuzz
 /* strings -- print the strings of printable characters in files
    Copyright (C) 1993-2021 Free Software Foundation, Inc.
 
@@ -121,17 +120,17 @@ static char *output_separator;
 
 static struct option long_options[] =
 {
-  // {"all", no_argument, NULL, 'a'},
-  // {"data", no_argument, NULL, 'd'},
-  // {"print-file-name", no_argument, NULL, 'f'},
-  // {"bytes", required_argument, NULL, 'n'},
-  // {"radix", required_argument, NULL, 't'},
-  // {"include-all-whitespace", no_argument, NULL, 'w'},
-  // {"encoding", required_argument, NULL, 'e'},
-  // {"target", required_argument, NULL, 'T'},
-  // {"output-separator", required_argument, NULL, 's'},
-  // {"help", no_argument, NULL, 'h'},
-  // {"version", no_argument, NULL, 'v'},
+  {"all", no_argument, NULL, 'a'},
+  {"data", no_argument, NULL, 'd'},
+  {"print-file-name", no_argument, NULL, 'f'},
+  {"bytes", required_argument, NULL, 'n'},
+  {"radix", required_argument, NULL, 't'},
+  {"include-all-whitespace", no_argument, NULL, 'w'},
+  {"encoding", required_argument, NULL, 'e'},
+  {"target", required_argument, NULL, 'T'},
+  {"output-separator", required_argument, NULL, 's'},
+  {"help", no_argument, NULL, 'h'},
+  {"version", no_argument, NULL, 'v'},
   {NULL, 0, NULL, 0}
 };
 
@@ -172,7 +171,7 @@ main (int argc, char **argv)
   encoding = 's';
   output_separator = NULL;
 
-  while ((optc = getopt_long (argc, argv, "adfwo",
+  while ((optc = getopt_long (argc, argv, "adfhHn:wot:e:T:s:Vv0123456789",
 			      long_options, (int *) 0)) != EOF)
     {
       switch (optc)

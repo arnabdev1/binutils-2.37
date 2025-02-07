@@ -1,4 +1,3 @@
-// Modified readelf for va fUZZ
 /* readelf.c -- display contents of an ELF format file
    Copyright (C) 1998-2021 Free Software Foundation, Inc.
 
@@ -4642,57 +4641,57 @@ static struct option options[] =
 {
  /* Note - This table is alpha-sorted on the 'val'
     field in order to make adding new options easier.  */
-//   {"arch-specific",    no_argument, 0, 'A'},
-//   {"all",	       no_argument, 0, 'a'},
-//   {"demangle",         optional_argument, 0, 'C'},
-//   {"archive-index",    no_argument, 0, 'c'},
-//   {"use-dynamic",      no_argument, 0, 'D'},
-//   {"dynamic",	       no_argument, 0, 'd'},
-//   {"headers",	       no_argument, 0, 'e'},
-//   {"section-groups",   no_argument, 0, 'g'},
-//   {"help",	       no_argument, 0, 'H'},
-//   {"file-header",      no_argument, 0, 'h'},
-//   {"histogram",	       no_argument, 0, 'I'},
-//   {"lint",             no_argument, 0, 'L'},
-//   {"enable-checks",    no_argument, 0, 'L'},
-//   {"program-headers",  no_argument, 0, 'l'},
-//   {"segments",	       no_argument, 0, 'l'},
-//   {"full-section-name",no_argument, 0, 'N'},
-//   {"notes",	       no_argument, 0, 'n'},
-//   {"process-links",    no_argument, 0, 'P'},
-//   {"string-dump",      required_argument, 0, 'p'},
-//   {"relocated-dump",   required_argument, 0, 'R'},
-//   {"relocs",	       no_argument, 0, 'r'},
-//   {"section-headers",  no_argument, 0, 'S'},
-//   {"sections",	       no_argument, 0, 'S'},
-//   {"symbols",	       no_argument, 0, 's'},
-//   {"syms",	       no_argument, 0, 's'},
-//   {"silent-truncation",no_argument, 0, 'T'},
-//   {"section-details",  no_argument, 0, 't'},
-//   {"unwind",	       no_argument, 0, 'u'},
-//   {"version-info",     no_argument, 0, 'V'},
-//   {"version",	       no_argument, 0, 'v'},
-//   {"wide",	       no_argument, 0, 'W'},
-//   {"hex-dump",	       required_argument, 0, 'x'},
-//   {"decompress",       no_argument, 0, 'z'},
+  {"arch-specific",    no_argument, 0, 'A'},
+  {"all",	       no_argument, 0, 'a'},
+  {"demangle",         optional_argument, 0, 'C'},
+  {"archive-index",    no_argument, 0, 'c'},
+  {"use-dynamic",      no_argument, 0, 'D'},
+  {"dynamic",	       no_argument, 0, 'd'},
+  {"headers",	       no_argument, 0, 'e'},
+  {"section-groups",   no_argument, 0, 'g'},
+  {"help",	       no_argument, 0, 'H'},
+  {"file-header",      no_argument, 0, 'h'},
+  {"histogram",	       no_argument, 0, 'I'},
+  {"lint",             no_argument, 0, 'L'},
+  {"enable-checks",    no_argument, 0, 'L'},
+  {"program-headers",  no_argument, 0, 'l'},
+  {"segments",	       no_argument, 0, 'l'},
+  {"full-section-name",no_argument, 0, 'N'},
+  {"notes",	       no_argument, 0, 'n'},
+  {"process-links",    no_argument, 0, 'P'},
+  {"string-dump",      required_argument, 0, 'p'},
+  {"relocated-dump",   required_argument, 0, 'R'},
+  {"relocs",	       no_argument, 0, 'r'},
+  {"section-headers",  no_argument, 0, 'S'},
+  {"sections",	       no_argument, 0, 'S'},
+  {"symbols",	       no_argument, 0, 's'},
+  {"syms",	       no_argument, 0, 's'},
+  {"silent-truncation",no_argument, 0, 'T'},
+  {"section-details",  no_argument, 0, 't'},
+  {"unwind",	       no_argument, 0, 'u'},
+  {"version-info",     no_argument, 0, 'V'},
+  {"version",	       no_argument, 0, 'v'},
+  {"wide",	       no_argument, 0, 'W'},
+  {"hex-dump",	       required_argument, 0, 'x'},
+  {"decompress",       no_argument, 0, 'z'},
 
-//   {"no-demangle",      no_argument, 0, OPTION_NO_DEMANGLING},
-//   {"recurse-limit",    no_argument, NULL, OPTION_RECURSE_LIMIT},
-//   {"no-recurse-limit", no_argument, NULL, OPTION_NO_RECURSE_LIMIT},
-//   {"no-recursion-limit", no_argument, NULL, OPTION_NO_RECURSE_LIMIT},
-//   {"dyn-syms",	       no_argument, 0, OPTION_DYN_SYMS},
-//   {"lto-syms",         no_argument, 0, OPTION_LTO_SYMS},
-//   {"debug-dump",       optional_argument, 0, OPTION_DEBUG_DUMP},
-//   {"dwarf-depth",      required_argument, 0, OPTION_DWARF_DEPTH},
-//   {"dwarf-start",      required_argument, 0, OPTION_DWARF_START},
-//   {"dwarf-check",      no_argument, 0, OPTION_DWARF_CHECK},
-// #ifdef ENABLE_LIBCTF
-//   {"ctf",	       required_argument, 0, OPTION_CTF_DUMP},
-//   {"ctf-symbols",      required_argument, 0, OPTION_CTF_SYMBOLS},
-//   {"ctf-strings",      required_argument, 0, OPTION_CTF_STRINGS},
-//   {"ctf-parent",       required_argument, 0, OPTION_CTF_PARENT},
-// #endif
-//   {"sym-base",	       optional_argument, 0, OPTION_SYM_BASE},
+  {"no-demangle",      no_argument, 0, OPTION_NO_DEMANGLING},
+  {"recurse-limit",    no_argument, NULL, OPTION_RECURSE_LIMIT},
+  {"no-recurse-limit", no_argument, NULL, OPTION_NO_RECURSE_LIMIT},
+  {"no-recursion-limit", no_argument, NULL, OPTION_NO_RECURSE_LIMIT},
+  {"dyn-syms",	       no_argument, 0, OPTION_DYN_SYMS},
+  {"lto-syms",         no_argument, 0, OPTION_LTO_SYMS},
+  {"debug-dump",       optional_argument, 0, OPTION_DEBUG_DUMP},
+  {"dwarf-depth",      required_argument, 0, OPTION_DWARF_DEPTH},
+  {"dwarf-start",      required_argument, 0, OPTION_DWARF_START},
+  {"dwarf-check",      no_argument, 0, OPTION_DWARF_CHECK},
+#ifdef ENABLE_LIBCTF
+  {"ctf",	       required_argument, 0, OPTION_CTF_DUMP},
+  {"ctf-symbols",      required_argument, 0, OPTION_CTF_SYMBOLS},
+  {"ctf-strings",      required_argument, 0, OPTION_CTF_STRINGS},
+  {"ctf-parent",       required_argument, 0, OPTION_CTF_PARENT},
+#endif
+  {"sym-base",	       optional_argument, 0, OPTION_SYM_BASE},
 
   {0,		       no_argument, 0, 0}
 };
@@ -4929,7 +4928,7 @@ parse_args (struct dump_data *dumpdata, int argc, char ** argv)
     usage (stderr);
 
   while ((c = getopt_long
-	  (argc, argv, "AcHILSsrTVWadeghlntuvw::z", options, NULL)) != EOF)
+	  (argc, argv, "ACDHILNPR:STVWacdeghi:lnp:rstuvw::x:z", options, NULL)) != EOF)
     {
       switch (c)
 	{
@@ -5017,9 +5016,9 @@ parse_args (struct dump_data *dumpdata, int argc, char ** argv)
 	case 'p':
 	  request_dump (dumpdata, STRING_DUMP);
 	  break;
-	// case 'R':
-	//   request_dump (dumpdata, RELOC_DUMP);
-	//   break;
+	case 'R':
+	  request_dump (dumpdata, RELOC_DUMP);
+	  break;
 	case 'z':
 	  decompress_dumps = true;
 	  break;

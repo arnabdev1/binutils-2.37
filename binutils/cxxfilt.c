@@ -1,4 +1,3 @@
-// Modified for bool flags only
 /* Demangler for GNU C++ - main program
    Copyright (C) 1989-2021 Free Software Foundation, Inc.
    Written by James Clark (jjc@jclark.uucp)
@@ -35,18 +34,18 @@ static int strip_underscore = TARGET_PREPENDS_UNDERSCORE;
 
 static const struct option long_options[] =
 {
-  // {"strip-underscore", no_argument, NULL, '_'},
-  // {"format", required_argument, NULL, 's'},
-  // {"help", no_argument, NULL, 'h'},
-  // {"no-params", no_argument, NULL, 'p'},
-  // {"no-strip-underscores", no_argument, NULL, 'n'},
-  // {"no-verbose", no_argument, NULL, 'i'},
-  // {"types", no_argument, NULL, 't'},
-  // {"version", no_argument, NULL, 'v'},
-  // {"recurse-limit", no_argument, NULL, 'R'},
-  // {"recursion-limit", no_argument, NULL, 'R'},
-  // {"no-recurse-limit", no_argument, NULL, 'r'},
-  // {"no-recursion-limit", no_argument, NULL, 'r'},
+  {"strip-underscore", no_argument, NULL, '_'},
+  {"format", required_argument, NULL, 's'},
+  {"help", no_argument, NULL, 'h'},
+  {"no-params", no_argument, NULL, 'p'},
+  {"no-strip-underscores", no_argument, NULL, 'n'},
+  {"no-verbose", no_argument, NULL, 'i'},
+  {"types", no_argument, NULL, 't'},
+  {"version", no_argument, NULL, 'v'},
+  {"recurse-limit", no_argument, NULL, 'R'},
+  {"recursion-limit", no_argument, NULL, 'R'},
+  {"no-recurse-limit", no_argument, NULL, 'r'},
+  {"no-recursion-limit", no_argument, NULL, 'r'},
   {NULL, no_argument, NULL, 0}
 };
 
@@ -151,42 +150,42 @@ main (int argc, char **argv)
 
   expandargv (&argc, &argv);
 
-  while ((c = getopt_long(argc, argv, "_inprRt", long_options, (int *)0)) != EOF)
-  {
-    switch (c)
+  while ((c = getopt_long (argc, argv, "_hinprRs:tv", long_options, (int *) 0)) != EOF)
     {
-    case '?':
-      usage(stderr, 1);
-      break;
-    case 'h':
-      usage(stdout, 0);
-    case 'n':
-      strip_underscore = 0;
-      break;
-    case 'p':
-      flags &= ~DMGL_PARAMS;
-      break;
-    case 'r':
-      flags |= DMGL_NO_RECURSE_LIMIT;
-      break;
-    case 'R':
-      flags &= ~DMGL_NO_RECURSE_LIMIT;
-      break;
-    case 't':
-      flags |= DMGL_TYPES;
-      break;
-    case 'i':
-      flags &= ~DMGL_VERBOSE;
-      break;
-    case 'v':
-      print_version("c++filt");
-      return 0;
-    case '_':
-      strip_underscore = 1;
-      break;
-    case 's':
-      style = cplus_demangle_name_to_style(optarg);
-      if (style == unknown_demangling)
+      switch (c)
+	{
+	case '?':
+	  usage (stderr, 1);
+	  break;
+	case 'h':
+	  usage (stdout, 0);
+	case 'n':
+	  strip_underscore = 0;
+	  break;
+	case 'p':
+	  flags &= ~ DMGL_PARAMS;
+	  break;
+	case 'r':
+	  flags |= DMGL_NO_RECURSE_LIMIT;
+	  break;
+	case 'R':
+	  flags &= ~ DMGL_NO_RECURSE_LIMIT;
+	  break;
+	case 't':
+	  flags |= DMGL_TYPES;
+	  break;
+	case 'i':
+	  flags &= ~ DMGL_VERBOSE;
+	  break;
+	case 'v':
+	  print_version ("c++filt");
+	  return 0;
+	case '_':
+	  strip_underscore = 1;
+	  break;
+	case 's':
+	  style = cplus_demangle_name_to_style (optarg);
+	  if (style == unknown_demangling)
 	    {
 	      fprintf (stderr, "%s: unknown demangling style `%s'\n",
 		       program_name, optarg);
