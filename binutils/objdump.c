@@ -1,3 +1,10 @@
+// disabled {"disassembler-options", required_argument, NULL, 'M'}
+// {"include", required_argument, NULL, 'I'},
+// {"start-address", required_argument, NULL, OPTION_START_ADDRESS},
+// {"stop-address", required_argument, NULL, OPTION_STOP_ADDRESS},
+// {"prefix", required_argument, NULL, OPTION_PREFIX},
+// {"ctf-parent", required_argument, NULL, OPTION_CTF_PARENT},
+
 /* objdump.c -- dump information about an object file.
    Copyright (C) 1990-2021 Free Software Foundation, Inc.
 
@@ -429,7 +436,7 @@ static struct option long_options[]=
   {"demangle", optional_argument, NULL, 'C'},
   {"disassemble", optional_argument, NULL, 'd'},
   {"disassemble-all", no_argument, NULL, 'D'},
-  {"disassembler-options", required_argument, NULL, 'M'},
+  // {"disassembler-options", required_argument, NULL, 'M'},
   {"disassemble-zeroes", no_argument, NULL, 'z'},
   {"dynamic-reloc", no_argument, NULL, 'R'},
   {"dynamic-syms", no_argument, NULL, 'T'},
@@ -457,20 +464,20 @@ static struct option long_options[]=
   {"source", no_argument, NULL, 'S'},
   {"source-comment", optional_argument, NULL, OPTION_SOURCE_COMMENT},
   {"special-syms", no_argument, &dump_special_syms, 1},
-  {"include", required_argument, NULL, 'I'},
+  // {"include", required_argument, NULL, 'I'},
   {"dwarf", optional_argument, NULL, OPTION_DWARF},
 #ifdef ENABLE_LIBCTF
   {"ctf", required_argument, NULL, OPTION_CTF},
-  {"ctf-parent", required_argument, NULL, OPTION_CTF_PARENT},
+  // {"ctf-parent", required_argument, NULL, OPTION_CTF_PARENT},
 #endif
   {"stabs", no_argument, NULL, 'G'},
-  {"start-address", required_argument, NULL, OPTION_START_ADDRESS},
-  {"stop-address", required_argument, NULL, OPTION_STOP_ADDRESS},
+  // {"start-address", required_argument, NULL, OPTION_START_ADDRESS},
+  // {"stop-address", required_argument, NULL, OPTION_STOP_ADDRESS},
   {"syms", no_argument, NULL, 't'},
   {"target", required_argument, NULL, 'b'},
   {"version", no_argument, NULL, 'V'},
   {"wide", no_argument, NULL, 'w'},
-  {"prefix", required_argument, NULL, OPTION_PREFIX},
+  // {"prefix", required_argument, NULL, OPTION_PREFIX},
   {"prefix-strip", required_argument, NULL, OPTION_PREFIX_STRIP},
   {"insn-width", required_argument, NULL, OPTION_INSN_WIDTH},
   {"dwarf-depth", required_argument, 0, OPTION_DWARF_DEPTH},
@@ -5211,45 +5218,45 @@ main (int argc, char **argv)
     fatal (_("fatal error: libbfd ABI mismatch"));
   set_default_bfd_target ();
 
-  while ((c = getopt_long (argc, argv,
-			   "pP:ib:m:M:VvCdDlfFaHhrRtTxsSI:j:wE:zgeGW::",
-			   long_options, (int *) 0))
-	 != EOF)
+  while ((c = getopt_long(argc, argv,
+                          // removed I:M:
+                          "pP:ib:m:VvCdDlfFaHhrRtTxsSj:wE:zgeGW::",
+                          long_options, (int *)0)) != EOF)
+  {
+    switch (c)
     {
-      switch (c)
-	{
-	case 0:
-	  break;		/* We've been given a long option.  */
-	case 'm':
-	  machine = optarg;
-	  break;
-	case 'M':
-	  {
-	    char *options;
-	    if (disassembler_options)
-	      /* Ignore potential memory leak for now.  */
-	      options = concat (disassembler_options, ",",
-				optarg, (const char *) NULL);
-	    else
-	      options = optarg;
-	    disassembler_options = remove_whitespace_and_extra_commas (options);
-	  }
-	  break;
-	case 'j':
-	  add_only (optarg);
-	  break;
-	case 'F':
-	  display_file_offsets = true;
-	  break;
-	case 'l':
-	  with_line_numbers = true;
-	  break;
-	case 'b':
-	  target = optarg;
-	  break;
-	case 'C':
-	  do_demangle = true;
-	  if (optarg != NULL)
+    case 0:
+      break; /* We've been given a long option.  */
+    case 'm':
+      machine = optarg;
+      break;
+    // case 'M':
+    //   {
+    //     char *options;
+    //     if (disassembler_options)
+    //       /* Ignore potential memory leak for now.  */
+    //       options = concat (disassembler_options, ",",
+    // 			optarg, (const char *) NULL);
+    //     else
+    //       options = optarg;
+    //     disassembler_options = remove_whitespace_and_extra_commas (options);
+    //   }
+    //   break;
+    case 'j':
+      add_only(optarg);
+      break;
+    case 'F':
+      display_file_offsets = true;
+      break;
+    case 'l':
+      with_line_numbers = true;
+      break;
+    case 'b':
+      target = optarg;
+      break;
+    case 'C':
+      do_demangle = true;
+      if (optarg != NULL)
 	    {
 	      enum demangling_styles style;
 
@@ -5273,23 +5280,23 @@ main (int argc, char **argv)
 	case OPTION_ADJUST_VMA:
 	  adjust_section_vma = parse_vma (optarg, "--adjust-vma");
 	  break;
-	case OPTION_START_ADDRESS:
-	  start_address = parse_vma (optarg, "--start-address");
-	  if ((stop_address != (bfd_vma) -1) && stop_address <= start_address)
-	    fatal (_("error: the start address should be before the end address"));
-	  break;
-	case OPTION_STOP_ADDRESS:
-	  stop_address = parse_vma (optarg, "--stop-address");
-	  if ((start_address != (bfd_vma) -1) && stop_address <= start_address)
-	    fatal (_("error: the stop address should be after the start address"));
-	  break;
-	case OPTION_PREFIX:
-	  prefix = optarg;
-	  prefix_length = strlen (prefix);
-	  /* Remove an unnecessary trailing '/' */
-	  while (IS_DIR_SEPARATOR (prefix[prefix_length - 1]))
-	    prefix_length--;
-	  break;
+	// case OPTION_START_ADDRESS:
+	//   start_address = parse_vma (optarg, "--start-address");
+	//   if ((stop_address != (bfd_vma) -1) && stop_address <= start_address)
+	//     fatal (_("error: the start address should be before the end address"));
+	//   break;
+	// case OPTION_STOP_ADDRESS:
+	//   stop_address = parse_vma (optarg, "--stop-address");
+	//   if ((start_address != (bfd_vma) -1) && stop_address <= start_address)
+	//     fatal (_("error: the stop address should be after the start address"));
+	//   break;
+	// case OPTION_PREFIX:
+	//   prefix = optarg;
+	//   prefix_length = strlen (prefix);
+	//   /* Remove an unnecessary trailing '/' */
+	//   while (IS_DIR_SEPARATOR (prefix[prefix_length - 1]))
+	//     prefix_length--;
+	//   break;
 	case OPTION_PREFIX_STRIP:
 	  prefix_strip = atoi (optarg);
 	  if (prefix_strip < 0)
@@ -5354,9 +5361,9 @@ main (int argc, char **argv)
 	  formats_info = true;
 	  seenflag = true;
 	  break;
-	case 'I':
-	  add_include_path (optarg);
-	  break;
+	// case 'I':
+	//   add_include_path (optarg);
+	//   break;
 	case 'p':
 	  dump_private_headers = true;
 	  seenflag = true;
@@ -5461,9 +5468,9 @@ main (int argc, char **argv)
 	  dump_ctf_section_name = xstrdup (optarg);
 	  seenflag = true;
 	  break;
-	case OPTION_CTF_PARENT:
-	  dump_ctf_parent_name = xstrdup (optarg);
-	  break;
+	// case OPTION_CTF_PARENT:
+	//   dump_ctf_parent_name = xstrdup (optarg);
+	//   break;
 #endif
 	case 'G':
 	  dump_stab_section_info = true;

@@ -1,3 +1,4 @@
+// disabled {"ifunc-chars", required_argument, 0, OPTION_IFUNC_CHARS}
 /* nm.c -- Describe symbol table of a rel file.
    Copyright (C) 1991-2021 Free Software Foundation, Inc.
 
@@ -235,7 +236,7 @@ static struct option long_options[] =
   {"extern-only", no_argument, &external_only, 1},
   {"format", required_argument, 0, 'f'},
   {"help", no_argument, 0, 'h'},
-  {"ifunc-chars", required_argument, 0, OPTION_IFUNC_CHARS},
+  // {"ifunc-chars", required_argument, 0, OPTION_IFUNC_CHARS},
   {"just-symbols", no_argument, 0, 'j'},
   {"line-numbers", no_argument, 0, 'l'},
   {"no-cplus", no_argument, &do_demangle, 0},  /* Linux compatibility.  */
@@ -1927,9 +1928,9 @@ main (int argc, char **argv)
 #endif
 	  break;
 
-	case OPTION_IFUNC_CHARS:
-	  ifunc_type_chars = optarg;
-	  break;
+	// case OPTION_IFUNC_CHARS:
+	//   ifunc_type_chars = optarg;
+	//   break;
 
 	case 0:		/* A long option that just sets a flag.  */
 	  break;
