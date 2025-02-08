@@ -1,3 +1,53 @@
+// disabled
+//  {"only-section", required_argument, 0, 'j'},
+//   {"add-gnu-debuglink", required_argument, 0, OPTION_ADD_GNU_DEBUGLINK},
+// {"strip-unneeded-symbol", required_argument, 0, OPTION_STRIP_UNNEEDED_SYMBOL},
+    // {"remove-section", required_argument, 0, 'R'},
+    // {"remove-relocations", required_argument, 0, OPTION_REMOVE_RELOCS},
+    // {"strip-symbol", required_argument, 0, 'N'},
+    // {"keep-section", required_argument, 0, OPTION_KEEP_SECTION},
+    // {"keep-symbol", required_argument, 0, 'K'},
+    // {"globalize-symbol", required_argument, 0, OPTION_GLOBALIZE_SYMBOL},
+    // {"globalize-symbols", required_argument, 0, OPTION_GLOBALIZE_SYMBOLS},
+    // {"keep-global-symbol", required_argument, 0, 'G'},
+    // {"weaken-symbol", required_argument, 0, 'W'},
+    // {"interleave-width", required_argument, 0, OPTION_INTERLEAVE_WIDTH},
+// {"interleave", optional_argument, 0, 'i'},
+// {"gap-fill", required_argument, 0, OPTION_GAP_FILL},
+// {"pad-to", required_argument, 0, OPTION_PAD_TO},
+    // {"set-start", required_argument, 0, OPTION_SET_START},
+    // {"change-start", required_argument, 0, OPTION_CHANGE_START},
+    // {"change-addresses", required_argument, 0, OPTION_CHANGE_ADDRESSES},
+    // {"change-section-address", required_argument, 0, OPTION_CHANGE_SECTION_ADDRESS},
+    // {"change-section-lma", required_argument, 0, OPTION_CHANGE_SECTION_LMA},
+    // {"change-section-vma", required_argument, 0, OPTION_CHANGE_SECTION_VMA},
+    // {"set-section-flags", required_argument, 0, OPTION_SET_SECTION_FLAGS},
+    // {"set-section-alignment", required_argument, 0, OPTION_SET_SECTION_ALIGNMENT},
+    // {"add-section", required_argument, 0, OPTION_ADD_SECTION},
+    // {"update-section", required_argument, 0, OPTION_UPDATE_SECTION},
+    // {"dump-section", required_argument, 0, OPTION_DUMP_SECTION},
+    // {"rename-section", required_argument, 0, OPTION_RENAME_SECTION},
+    // {"redefine-sym", required_argument, 0, OPTION_REDEFINE_SYM},
+    // {"redefine-syms", required_argument, 0, OPTION_REDEFINE_SYMS},
+    // {"strip-symbols", required_argument, 0, OPTION_STRIP_SYMBOLS},
+    // {"keep-symbol", required_argument, 0, 'K'},
+    // {"keep-symbols", required_argument, 0, OPTION_KEEP_SYMBOLS},
+    // {"localize-symbol", required_argument, 0, 'L'},
+    // {"localize-symbols", required_argument, 0, OPTION_LOCALIZE_SYMBOLS},
+    // {"weaken-symbol", required_argument, 0, 'W'},
+    // {"change-start", required_argument, 0, OPTION_CHANGE_START},
+    // {"change-addresses", required_argument, 0, OPTION_CHANGE_ADDRESSES},
+    // {"add-symbol", required_argument, 0, OPTION_ADD_SYMBOL},
+    // {"alt-machine-code", required_argument, 0, OPTION_ALT_MACH_CODE},
+    // {"prefix-sections", required_argument, 0, OPTION_PREFIX_SECTIONS},
+    // {"prefix-symbols", required_argument, 0, OPTION_PREFIX_SYMBOLS},
+    // {"prefix-alloc-sections", required_argument, 0, OPTION_PREFIX_ALLOC_SECTIONS},
+    // {"heap", required_argument, 0, OPTION_HEAP},
+    // {"image-base", required_argument, 0, OPTION_IMAGE_BASE},
+    // {"stack", required_argument, 0, OPTION_STACK},
+    // {"subsystem", required_argument, 0, OPTION_SUBSYSTEM},
+    // {"compress-debug-sections", optional_argument, 0, OPTION_COMPRESS_DEBUG_SECTIONS},
+
 /* objcopy.c -- copy object file from input to output, optionally massaging it.
    Copyright (C) 1991-2021 Free Software Foundation, Inc.
 
@@ -17,7 +67,7 @@
    along with this program; if not, write to the Free Software
    Foundation, Inc., 51 Franklin Street - Fifth Floor, Boston, MA
    02110-1301, USA.  */
-
+
 #include "sysdep.h"
 #include "bfd.h"
 #include "progress.h"
@@ -37,7 +87,7 @@
 #include "coff/i386.h"
 #include "coff/pe.h"
 
-static bfd_vma pe_file_alignment = (bfd_vma) -1;
+    static bfd_vma pe_file_alignment = (bfd_vma)-1;
 static bfd_vma pe_heap_commit = (bfd_vma) -1;
 static bfd_vma pe_heap_reserve = (bfd_vma) -1;
 static bfd_vma pe_image_base = (bfd_vma) -1;
@@ -306,71 +356,71 @@ static enum long_section_name_handling long_section_names = KEEP;
 /* 150 isn't special; it's just an arbitrary non-ASCII char value.  */
 enum command_line_switch
 {
-  OPTION_ADD_SECTION=150,
-  OPTION_ADD_GNU_DEBUGLINK,
-  OPTION_ADD_SYMBOL,
-  OPTION_ALT_MACH_CODE,
-  OPTION_CHANGE_ADDRESSES,
+  // OPTION_ADD_SECTION=150,
+  // OPTION_ADD_GNU_DEBUGLINK,
+  // OPTION_ADD_SYMBOL,
+  // OPTION_ALT_MACH_CODE,
+  // OPTION_CHANGE_ADDRESSES,
   OPTION_CHANGE_LEADING_CHAR,
-  OPTION_CHANGE_SECTION_ADDRESS,
-  OPTION_CHANGE_SECTION_LMA,
-  OPTION_CHANGE_SECTION_VMA,
-  OPTION_CHANGE_START,
+  // OPTION_CHANGE_SECTION_ADDRESS,
+  // OPTION_CHANGE_SECTION_LMA,
+  // OPTION_CHANGE_SECTION_VMA,
+  // OPTION_CHANGE_START,
   OPTION_CHANGE_WARNINGS,
   OPTION_COMPRESS_DEBUG_SECTIONS,
   OPTION_DEBUGGING,
   OPTION_DECOMPRESS_DEBUG_SECTIONS,
-  OPTION_DUMP_SECTION,
+  // OPTION_DUMP_SECTION,
   OPTION_ELF_STT_COMMON,
   OPTION_EXTRACT_DWO,
   OPTION_EXTRACT_SYMBOL,
   OPTION_FILE_ALIGNMENT,
   OPTION_FORMATS_INFO,
-  OPTION_GAP_FILL,
-  OPTION_GLOBALIZE_SYMBOL,
-  OPTION_GLOBALIZE_SYMBOLS,
+  // OPTION_GAP_FILL,
+  // OPTION_GLOBALIZE_SYMBOL,
+  // OPTION_GLOBALIZE_SYMBOLS,
   OPTION_HEAP,
   OPTION_IMAGE_BASE,
   OPTION_IMPURE,
-  OPTION_INTERLEAVE_WIDTH,
+  // OPTION_INTERLEAVE_WIDTH,
   OPTION_KEEPGLOBAL_SYMBOLS,
   OPTION_KEEP_FILE_SYMBOLS,
   OPTION_KEEP_SECTION,
-  OPTION_KEEP_SYMBOLS,
-  OPTION_KEEP_SECTION_SYMBOLS,
+  // OPTION_KEEP_SYMBOLS,
+  // OPTION_KEEP_SECTION_SYMBOLS,
   OPTION_LOCALIZE_HIDDEN,
-  OPTION_LOCALIZE_SYMBOLS,
+  // OPTION_LOCALIZE_SYMBOLS,
   OPTION_LONG_SECTION_NAMES,
   OPTION_MERGE_NOTES,
   OPTION_NO_MERGE_NOTES,
   OPTION_NO_CHANGE_WARNINGS,
   OPTION_ONLY_KEEP_DEBUG,
-  OPTION_PAD_TO,
-  OPTION_PREFIX_ALLOC_SECTIONS,
-  OPTION_PREFIX_SECTIONS,
-  OPTION_PREFIX_SYMBOLS,
+  // OPTION_PAD_TO,
+  // OPTION_PREFIX_ALLOC_SECTIONS,
+  // OPTION_PREFIX_SECTIONS,
+  // OPTION_PREFIX_SYMBOLS,
   OPTION_PURE,
   OPTION_READONLY_TEXT,
-  OPTION_REDEFINE_SYM,
-  OPTION_REDEFINE_SYMS,
+  // OPTION_REDEFINE_SYM,
+  // OPTION_REDEFINE_SYMS,
   OPTION_REMOVE_LEADING_CHAR,
-  OPTION_REMOVE_RELOCS,
-  OPTION_RENAME_SECTION,
+  // OPTION_REMOVE_RELOCS,
+  // OPTION_RENAME_SECTION,
   OPTION_REVERSE_BYTES,
   OPTION_PE_SECTION_ALIGNMENT,
-  OPTION_SET_SECTION_FLAGS,
-  OPTION_SET_SECTION_ALIGNMENT,
-  OPTION_SET_START,
+  // OPTION_SET_SECTION_FLAGS,
+  // OPTION_SET_SECTION_ALIGNMENT,
+  // OPTION_SET_START,
   OPTION_SREC_FORCES3,
   OPTION_SREC_LEN,
   OPTION_STACK,
   OPTION_STRIP_DWO,
-  OPTION_STRIP_SYMBOLS,
+  // OPTION_STRIP_SYMBOLS,
   OPTION_STRIP_UNNEEDED,
-  OPTION_STRIP_UNNEEDED_SYMBOL,
-  OPTION_STRIP_UNNEEDED_SYMBOLS,
-  OPTION_SUBSYSTEM,
-  OPTION_UPDATE_SECTION,
+  // OPTION_STRIP_UNNEEDED_SYMBOL,
+  // OPTION_STRIP_UNNEEDED_SYMBOLS,
+  // OPTION_SUBSYSTEM,
+  // OPTION_UPDATE_SECTION,
   OPTION_VERILOG_DATA_WIDTH,
   OPTION_WEAKEN,
   OPTION_WEAKEN_SYMBOLS,
@@ -390,23 +440,23 @@ static struct option strip_options[] =
   {"info", no_argument, 0, OPTION_FORMATS_INFO},
   {"input-format", required_argument, 0, 'I'}, /* Obsolete */
   {"input-target", required_argument, 0, 'I'},
-  {"keep-section-symbols", no_argument, 0, OPTION_KEEP_SECTION_SYMBOLS},
+  // {"keep-section-symbols", no_argument, 0, OPTION_KEEP_SECTION_SYMBOLS},
   {"keep-file-symbols", no_argument, 0, OPTION_KEEP_FILE_SYMBOLS},
   {"keep-section", required_argument, 0, OPTION_KEEP_SECTION},
-  {"keep-symbol", required_argument, 0, 'K'},
+  // {"keep-symbol", required_argument, 0, 'K'},
   {"merge-notes", no_argument, 0, 'M'},
   {"no-merge-notes", no_argument, 0, OPTION_NO_MERGE_NOTES},
-  {"only-keep-debug", no_argument, 0, OPTION_ONLY_KEEP_DEBUG},
+  // {"only-keep-debug", no_argument, 0, OPTION_ONLY_KEEP_DEBUG},
   {"output-file", required_argument, 0, 'o'},
   {"output-format", required_argument, 0, 'O'},	/* Obsolete */
   {"output-target", required_argument, 0, 'O'},
   {"preserve-dates", no_argument, 0, 'p'},
-  {"remove-section", required_argument, 0, 'R'},
-  {"remove-relocations", required_argument, 0, OPTION_REMOVE_RELOCS},
+  // {"remove-section", required_argument, 0, 'R'},
+  // {"remove-relocations", required_argument, 0, OPTION_REMOVE_RELOCS},
   {"strip-all", no_argument, 0, 's'},
   {"strip-debug", no_argument, 0, 'S'},
   {"strip-dwo", no_argument, 0, OPTION_STRIP_DWO},
-  {"strip-symbol", required_argument, 0, 'N'},
+  // {"strip-symbol", required_argument, 0, 'N'},
   {"strip-unneeded", no_argument, 0, OPTION_STRIP_UNNEEDED},
   {"target", required_argument, 0, 'F'},
   {"verbose", no_argument, 0, 'v'},
@@ -419,104 +469,104 @@ static struct option strip_options[] =
 
 static struct option copy_options[] =
 {
-  {"add-gnu-debuglink", required_argument, 0, OPTION_ADD_GNU_DEBUGLINK},
-  {"add-section", required_argument, 0, OPTION_ADD_SECTION},
-  {"add-symbol", required_argument, 0, OPTION_ADD_SYMBOL},
-  {"adjust-section-vma", required_argument, 0, OPTION_CHANGE_SECTION_ADDRESS},
-  {"adjust-start", required_argument, 0, OPTION_CHANGE_START},
+  // {"add-gnu-debuglink", required_argument, 0, OPTION_ADD_GNU_DEBUGLINK},
+  // {"add-section", required_argument, 0, OPTION_ADD_SECTION},
+  // {"add-symbol", required_argument, 0, OPTION_ADD_SYMBOL},
+  // {"adjust-section-vma", required_argument, 0, OPTION_CHANGE_SECTION_ADDRESS},
+  // {"adjust-start", required_argument, 0, OPTION_CHANGE_START},
   {"adjust-vma", required_argument, 0, OPTION_CHANGE_ADDRESSES},
   {"adjust-warnings", no_argument, 0, OPTION_CHANGE_WARNINGS},
-  {"alt-machine-code", required_argument, 0, OPTION_ALT_MACH_CODE},
+  // {"alt-machine-code", required_argument, 0, OPTION_ALT_MACH_CODE},
   {"binary-architecture", required_argument, 0, 'B'},
   {"byte", required_argument, 0, 'b'},
-  {"change-addresses", required_argument, 0, OPTION_CHANGE_ADDRESSES},
+  // {"change-addresses", required_argument, 0, OPTION_CHANGE_ADDRESSES},
   {"change-leading-char", no_argument, 0, OPTION_CHANGE_LEADING_CHAR},
-  {"change-section-address", required_argument, 0, OPTION_CHANGE_SECTION_ADDRESS},
-  {"change-section-lma", required_argument, 0, OPTION_CHANGE_SECTION_LMA},
-  {"change-section-vma", required_argument, 0, OPTION_CHANGE_SECTION_VMA},
-  {"change-start", required_argument, 0, OPTION_CHANGE_START},
+  // {"change-section-address", required_argument, 0, OPTION_CHANGE_SECTION_ADDRESS},
+  // {"change-section-lma", required_argument, 0, OPTION_CHANGE_SECTION_LMA},
+  // {"change-section-vma", required_argument, 0, OPTION_CHANGE_SECTION_VMA},
+  // {"change-start", required_argument, 0, OPTION_CHANGE_START},
   {"change-warnings", no_argument, 0, OPTION_CHANGE_WARNINGS},
-  {"compress-debug-sections", optional_argument, 0, OPTION_COMPRESS_DEBUG_SECTIONS},
+  // {"compress-debug-sections", optional_argument, 0, OPTION_COMPRESS_DEBUG_SECTIONS},
   {"debugging", no_argument, 0, OPTION_DEBUGGING},
   {"decompress-debug-sections", no_argument, 0, OPTION_DECOMPRESS_DEBUG_SECTIONS},
   {"disable-deterministic-archives", no_argument, 0, 'U'},
   {"discard-all", no_argument, 0, 'x'},
   {"discard-locals", no_argument, 0, 'X'},
-  {"dump-section", required_argument, 0, OPTION_DUMP_SECTION},
+  // {"dump-section", required_argument, 0, OPTION_DUMP_SECTION},
   {"elf-stt-common", required_argument, 0, OPTION_ELF_STT_COMMON},
   {"enable-deterministic-archives", no_argument, 0, 'D'},
   {"extract-dwo", no_argument, 0, OPTION_EXTRACT_DWO},
   {"extract-symbol", no_argument, 0, OPTION_EXTRACT_SYMBOL},
   {"file-alignment", required_argument, 0, OPTION_FILE_ALIGNMENT},
   {"format", required_argument, 0, 'F'}, /* Obsolete */
-  {"gap-fill", required_argument, 0, OPTION_GAP_FILL},
-  {"globalize-symbol", required_argument, 0, OPTION_GLOBALIZE_SYMBOL},
-  {"globalize-symbols", required_argument, 0, OPTION_GLOBALIZE_SYMBOLS},
-  {"heap", required_argument, 0, OPTION_HEAP},
+  // {"gap-fill", required_argument, 0, OPTION_GAP_FILL},
+  // {"globalize-symbol", required_argument, 0, OPTION_GLOBALIZE_SYMBOL},
+  // {"globalize-symbols", required_argument, 0, OPTION_GLOBALIZE_SYMBOLS},
+  // {"heap", required_argument, 0, OPTION_HEAP},
   {"help", no_argument, 0, 'h'},
-  {"image-base", required_argument, 0 , OPTION_IMAGE_BASE},
+  // {"image-base", required_argument, 0 , OPTION_IMAGE_BASE},
   {"impure", no_argument, 0, OPTION_IMPURE},
   {"info", no_argument, 0, OPTION_FORMATS_INFO},
   {"input-format", required_argument, 0, 'I'}, /* Obsolete */
   {"input-target", required_argument, 0, 'I'},
-  {"interleave", optional_argument, 0, 'i'},
-  {"interleave-width", required_argument, 0, OPTION_INTERLEAVE_WIDTH},
+  // {"interleave", optional_argument, 0, 'i'},
+  // {"interleave-width", required_argument, 0, OPTION_INTERLEAVE_WIDTH},
   {"keep-file-symbols", no_argument, 0, OPTION_KEEP_FILE_SYMBOLS},
-  {"keep-global-symbol", required_argument, 0, 'G'},
+  // {"keep-global-symbol", required_argument, 0, 'G'},
   {"keep-global-symbols", required_argument, 0, OPTION_KEEPGLOBAL_SYMBOLS},
-  {"keep-section", required_argument, 0, OPTION_KEEP_SECTION},
-  {"keep-symbol", required_argument, 0, 'K'},
-  {"keep-symbols", required_argument, 0, OPTION_KEEP_SYMBOLS},
-  {"keep-section-symbols", required_argument, 0, OPTION_KEEP_SECTION_SYMBOLS},
+  // {"keep-section", required_argument, 0, OPTION_KEEP_SECTION},
+  // {"keep-symbol", required_argument, 0, 'K'},
+  // {"keep-symbols", required_argument, 0, OPTION_KEEP_SYMBOLS},
+  // {"keep-section-symbols", required_argument, 0, OPTION_KEEP_SECTION_SYMBOLS},
   {"localize-hidden", no_argument, 0, OPTION_LOCALIZE_HIDDEN},
-  {"localize-symbol", required_argument, 0, 'L'},
-  {"localize-symbols", required_argument, 0, OPTION_LOCALIZE_SYMBOLS},
+  // {"localize-symbol", required_argument, 0, 'L'},
+  // {"localize-symbols", required_argument, 0, OPTION_LOCALIZE_SYMBOLS},
   {"long-section-names", required_argument, 0, OPTION_LONG_SECTION_NAMES},
   {"merge-notes", no_argument, 0, 'M'},
   {"no-merge-notes", no_argument, 0, OPTION_NO_MERGE_NOTES},
   {"no-adjust-warnings", no_argument, 0, OPTION_NO_CHANGE_WARNINGS},
   {"no-change-warnings", no_argument, 0, OPTION_NO_CHANGE_WARNINGS},
   {"only-keep-debug", no_argument, 0, OPTION_ONLY_KEEP_DEBUG},
-  {"only-section", required_argument, 0, 'j'},
+  // {"only-section", required_argument, 0, 'j'},
   {"output-format", required_argument, 0, 'O'},	/* Obsolete */
   {"output-target", required_argument, 0, 'O'},
-  {"pad-to", required_argument, 0, OPTION_PAD_TO},
-  {"prefix-alloc-sections", required_argument, 0, OPTION_PREFIX_ALLOC_SECTIONS},
-  {"prefix-sections", required_argument, 0, OPTION_PREFIX_SECTIONS},
-  {"prefix-symbols", required_argument, 0, OPTION_PREFIX_SYMBOLS},
+  // {"pad-to", required_argument, 0, OPTION_PAD_TO},
+  // {"prefix-alloc-sections", required_argument, 0, OPTION_PREFIX_ALLOC_SECTIONS},
+  // {"prefix-sections", required_argument, 0, OPTION_PREFIX_SECTIONS},
+  // {"prefix-symbols", required_argument, 0, OPTION_PREFIX_SYMBOLS},
   {"preserve-dates", no_argument, 0, 'p'},
   {"pure", no_argument, 0, OPTION_PURE},
   {"readonly-text", no_argument, 0, OPTION_READONLY_TEXT},
-  {"redefine-sym", required_argument, 0, OPTION_REDEFINE_SYM},
-  {"redefine-syms", required_argument, 0, OPTION_REDEFINE_SYMS},
+  // {"redefine-sym", required_argument, 0, OPTION_REDEFINE_SYM},
+  // {"redefine-syms", required_argument, 0, OPTION_REDEFINE_SYMS},
   {"remove-leading-char", no_argument, 0, OPTION_REMOVE_LEADING_CHAR},
-  {"remove-section", required_argument, 0, 'R'},
-  {"remove-relocations", required_argument, 0, OPTION_REMOVE_RELOCS},
-  {"rename-section", required_argument, 0, OPTION_RENAME_SECTION},
+  // {"remove-section", required_argument, 0, 'R'},
+  // {"remove-relocations", required_argument, 0, OPTION_REMOVE_RELOCS},
+  // {"rename-section", required_argument, 0, OPTION_RENAME_SECTION},
   {"reverse-bytes", required_argument, 0, OPTION_REVERSE_BYTES},
   {"section-alignment", required_argument, 0, OPTION_PE_SECTION_ALIGNMENT},
-  {"set-section-flags", required_argument, 0, OPTION_SET_SECTION_FLAGS},
-  {"set-section-alignment", required_argument, 0, OPTION_SET_SECTION_ALIGNMENT},
-  {"set-start", required_argument, 0, OPTION_SET_START},
+  // {"set-section-flags", required_argument, 0, OPTION_SET_SECTION_FLAGS},
+  // {"set-section-alignment", required_argument, 0, OPTION_SET_SECTION_ALIGNMENT},
+  // {"set-start", required_argument, 0, OPTION_SET_START},
   {"srec-forceS3", no_argument, 0, OPTION_SREC_FORCES3},
   {"srec-len", required_argument, 0, OPTION_SREC_LEN},
-  {"stack", required_argument, 0, OPTION_STACK},
+  // {"stack", required_argument, 0, OPTION_STACK},
   {"strip-all", no_argument, 0, 'S'},
   {"strip-debug", no_argument, 0, 'g'},
   {"strip-dwo", no_argument, 0, OPTION_STRIP_DWO},
-  {"strip-symbol", required_argument, 0, 'N'},
-  {"strip-symbols", required_argument, 0, OPTION_STRIP_SYMBOLS},
+  // {"strip-symbol", required_argument, 0, 'N'},
+  // {"strip-symbols", required_argument, 0, OPTION_STRIP_SYMBOLS},
   {"strip-unneeded", no_argument, 0, OPTION_STRIP_UNNEEDED},
-  {"strip-unneeded-symbol", required_argument, 0, OPTION_STRIP_UNNEEDED_SYMBOL},
-  {"strip-unneeded-symbols", required_argument, 0, OPTION_STRIP_UNNEEDED_SYMBOLS},
+  // {"strip-unneeded-symbol", required_argument, 0, OPTION_STRIP_UNNEEDED_SYMBOL},
+  // {"strip-unneeded-symbols", required_argument, 0, OPTION_STRIP_UNNEEDED_SYMBOLS},
   {"subsystem", required_argument, 0, OPTION_SUBSYSTEM},
   {"target", required_argument, 0, 'F'},
-  {"update-section", required_argument, 0, OPTION_UPDATE_SECTION},
+  // {"update-section", required_argument, 0, OPTION_UPDATE_SECTION},
   {"verbose", no_argument, 0, 'v'},
   {"verilog-data-width", required_argument, 0, OPTION_VERILOG_DATA_WIDTH},
   {"version", no_argument, 0, 'V'},
   {"weaken", no_argument, 0, OPTION_WEAKEN},
-  {"weaken-symbol", required_argument, 0, 'W'},
+  // {"weaken-symbol", required_argument, 0, 'W'},
   {"weaken-symbols", required_argument, 0, OPTION_WEAKEN_SYMBOLS},
   {"wildcard", no_argument, 0, 'w'},
   {"writable-text", no_argument, 0, OPTION_WRITABLE_TEXT},
@@ -4698,15 +4748,15 @@ strip_main (int argc, char *argv[])
 	case 'F':
 	  input_target = output_target = optarg;
 	  break;
-	case 'R':
-	  handle_remove_section_option (optarg);
-	  break;
+	// case 'R':
+	//   handle_remove_section_option (optarg);
+	//   break;
 	case OPTION_KEEP_SECTION:
 	  find_section_list (optarg, true, SECTION_CONTEXT_KEEP);
 	  break;
-	case OPTION_REMOVE_RELOCS:
-	  handle_remove_relocations_option (optarg);
-	  break;
+	// case OPTION_REMOVE_RELOCS:
+	  // handle_remove_relocations_option (optarg);
+	  // break;
 	case 's':
 	  strip_symbols = STRIP_ALL;
 	  break;
@@ -4721,9 +4771,9 @@ strip_main (int argc, char *argv[])
 	case OPTION_STRIP_UNNEEDED:
 	  strip_symbols = STRIP_UNNEEDED;
 	  break;
-	case 'K':
-	  add_specific_symbol (optarg, keep_specific_htab);
-	  break;
+	// case 'K':
+	//   add_specific_symbol (optarg, keep_specific_htab);
+	//   break;
 	case 'M':
 	  merge_notes = true;
 	  merge_notes_set = true;
@@ -4732,9 +4782,9 @@ strip_main (int argc, char *argv[])
 	  merge_notes = false;
 	  merge_notes_set = true;
 	  break;
-	case 'N':
-	  add_specific_symbol (optarg, strip_specific_htab);
-	  break;
+	// case 'N':
+	//   add_specific_symbol (optarg, strip_specific_htab);
+	//   break;
 	case 'o':
 	  output_file = optarg;
 	  break;
@@ -4768,9 +4818,9 @@ strip_main (int argc, char *argv[])
 	case OPTION_KEEP_FILE_SYMBOLS:
 	  keep_file_symbols = 1;
 	  break;
-	case OPTION_KEEP_SECTION_SYMBOLS:
-	  keep_section_symbols = true;
-	  break;
+	// case OPTION_KEEP_SECTION_SYMBOLS:
+	//   keep_section_symbols = true;
+	//   break;
 	case 0:
 	  /* We've been given a long option.  */
 	  break;
@@ -5098,22 +5148,22 @@ copy_main (int argc, char *argv[])
 	    fatal (_("architecture %s unknown"), optarg);
 	  break;
 
-	case 'i':
-	  if (optarg)
-	    {
-	      interleave = atoi (optarg);
-	      if (interleave < 1)
-		fatal (_("interleave must be positive"));
-	    }
-	  else
-	    interleave = 4;
-	  break;
+	// case 'i':
+	//   if (optarg)
+	//     {
+	//       interleave = atoi (optarg);
+	//       if (interleave < 1)
+	// 	fatal (_("interleave must be positive"));
+	//     }
+	//   else
+	//     interleave = 4;
+	//   break;
 
-	case OPTION_INTERLEAVE_WIDTH:
-	  copy_width = atoi (optarg);
-	  if (copy_width < 1)
-	    fatal(_("interleave width must be positive"));
-	  break;
+	// case OPTION_INTERLEAVE_WIDTH:
+	//   copy_width = atoi (optarg);
+	//   if (copy_width < 1)
+	//     fatal(_("interleave width must be positive"));
+	//   break;
 
 	case 'I':
 	case 's':		/* "source" - 'I' is preferred */
@@ -5129,22 +5179,22 @@ copy_main (int argc, char *argv[])
 	  input_target = output_target = optarg;
 	  break;
 
-	case 'j':
-	  find_section_list (optarg, true, SECTION_CONTEXT_COPY);
-	  sections_copied = true;
-	  break;
+	// case 'j':
+	//   find_section_list (optarg, true, SECTION_CONTEXT_COPY);
+	//   sections_copied = true;
+	//   break;
 
-	case 'R':
-	  handle_remove_section_option (optarg);
-	  break;
+	// case 'R':
+	//   handle_remove_section_option (optarg);
+	//   break;
 
 	case OPTION_KEEP_SECTION:
 	  find_section_list (optarg, true, SECTION_CONTEXT_KEEP);
 	  break;
 
-        case OPTION_REMOVE_RELOCS:
-	  handle_remove_relocations_option (optarg);
-	  break;
+    //     case OPTION_REMOVE_RELOCS:
+	  // handle_remove_relocations_option (optarg);
+	  // break;
 
 	case 'S':
 	  strip_symbols = STRIP_ALL;
@@ -5170,14 +5220,14 @@ copy_main (int argc, char *argv[])
 	  keep_file_symbols = 1;
 	  break;
 
-	case OPTION_ADD_GNU_DEBUGLINK:
-	  long_section_names = ENABLE ;
-	  gnu_debuglink_filename = optarg;
-	  break;
+	// case OPTION_ADD_GNU_DEBUGLINK:
+	//   long_section_names = ENABLE ;
+	//   gnu_debuglink_filename = optarg;
+	//   break;
 
-	case 'K':
-	  add_specific_symbol (optarg, keep_specific_htab);
-	  break;
+	// case 'K':
+	//   add_specific_symbol (optarg, keep_specific_htab);
+	//   break;
 
 	case 'M':
 	  merge_notes = true;
@@ -5186,31 +5236,31 @@ copy_main (int argc, char *argv[])
 	  merge_notes = false;
 	  break;
 
-	case 'N':
-	  add_specific_symbol (optarg, strip_specific_htab);
-	  break;
+	// case 'N':
+	//   add_specific_symbol (optarg, strip_specific_htab);
+	//   break;
 
-	case OPTION_STRIP_UNNEEDED_SYMBOL:
-	  add_specific_symbol (optarg, strip_unneeded_htab);
-	  break;
+	// case OPTION_STRIP_UNNEEDED_SYMBOL:
+	//   add_specific_symbol (optarg, strip_unneeded_htab);
+	//   break;
 
 	case 'L':
 	  add_specific_symbol (optarg, localize_specific_htab);
 	  break;
 
-	case OPTION_GLOBALIZE_SYMBOL:
-	  use_globalize = true;
-	  add_specific_symbol (optarg, globalize_specific_htab);
-	  break;
+	// case OPTION_GLOBALIZE_SYMBOL:
+	//   use_globalize = true;
+	//   add_specific_symbol (optarg, globalize_specific_htab);
+	//   break;
 
-	case 'G':
-	  use_keep_global = true;
-	  add_specific_symbol (optarg, keepglobal_specific_htab);
-	  break;
+	// case 'G':
+	//   use_keep_global = true;
+	//   add_specific_symbol (optarg, keepglobal_specific_htab);
+	//   break;
 
-	case 'W':
-	  add_specific_symbol (optarg, weaken_specific_htab);
-	  break;
+	// case 'W':
+	//   add_specific_symbol (optarg, weaken_specific_htab);
+	//   break;
 
 	case 'p':
 	  preserve_dates = true;
@@ -5252,163 +5302,163 @@ copy_main (int argc, char *argv[])
 	  weaken = true;
 	  break;
 
-	case OPTION_ADD_SECTION:
-	  add_sections = init_section_add (optarg, add_sections,
-					   "--add-section");
-	  section_add_load_file (add_sections);
-	  break;
+	// case OPTION_ADD_SECTION:
+	//   add_sections = init_section_add (optarg, add_sections,
+	// 				   "--add-section");
+	//   section_add_load_file (add_sections);
+	//   break;
 
-	case OPTION_UPDATE_SECTION:
-	  update_sections = init_section_add (optarg, update_sections,
-					      "--update-section");
-	  section_add_load_file (update_sections);
-	  break;
+	// case OPTION_UPDATE_SECTION:
+	//   update_sections = init_section_add (optarg, update_sections,
+	// 				      "--update-section");
+	//   section_add_load_file (update_sections);
+	//   break;
 
-	case OPTION_DUMP_SECTION:
-	  dump_sections = init_section_add (optarg, dump_sections,
-					    "--dump-section");
-	  break;
+	// case OPTION_DUMP_SECTION:
+	//   dump_sections = init_section_add (optarg, dump_sections,
+	// 				    "--dump-section");
+	//   break;
 
-	case OPTION_ADD_SYMBOL:
-	  {
-	    char *s, *t;
-	    struct addsym_node *newsym = xmalloc (sizeof *newsym);
+	// case OPTION_ADD_SYMBOL:
+	//   {
+	//     char *s, *t;
+	//     struct addsym_node *newsym = xmalloc (sizeof *newsym);
 
-	    newsym->next = NULL;
-	    s = strchr (optarg, '=');
-	    if (s == NULL)
-	      fatal (_("bad format for %s"), "--add-symbol");
-	    t = strchr (s + 1, ':');
+	//     newsym->next = NULL;
+	//     s = strchr (optarg, '=');
+	//     if (s == NULL)
+	//       fatal (_("bad format for %s"), "--add-symbol");
+	//     t = strchr (s + 1, ':');
 
-	    newsym->symdef = xstrndup (optarg, s - optarg);
-	    if (t)
-	      {
-		newsym->section = xstrndup (s + 1, t - (s + 1));
-		newsym->symval = strtol (t + 1, NULL, 0);
-	      }
-	    else
-	      {
-		newsym->section = NULL;
-		newsym->symval = strtol (s + 1, NULL, 0);
-		t = s;
-	      }
+	//     newsym->symdef = xstrndup (optarg, s - optarg);
+	//     if (t)
+	//       {
+	// 	newsym->section = xstrndup (s + 1, t - (s + 1));
+	// 	newsym->symval = strtol (t + 1, NULL, 0);
+	//       }
+	//     else
+	//       {
+	// 	newsym->section = NULL;
+	// 	newsym->symval = strtol (s + 1, NULL, 0);
+	// 	t = s;
+	//       }
 
-	    t = strchr (t + 1, ',');
-	    newsym->othersym = NULL;
-	    if (t)
-	      newsym->flags = parse_symflags (t+1, &newsym->othersym);
-	    else
-	      newsym->flags = BSF_GLOBAL;
+	//     t = strchr (t + 1, ',');
+	//     newsym->othersym = NULL;
+	//     if (t)
+	//       newsym->flags = parse_symflags (t+1, &newsym->othersym);
+	//     else
+	//       newsym->flags = BSF_GLOBAL;
 
-	    /* Keep 'othersym' symbols at the front of the list.  */
-	    if (newsym->othersym)
-	      {
-		newsym->next = add_sym_list;
-		if (!add_sym_list)
-		  add_sym_tail = &newsym->next;
-		add_sym_list = newsym;
-	      }
-	    else
-	      {
-		*add_sym_tail = newsym;
-		add_sym_tail = &newsym->next;
-	      }
-	    add_symbols++;
-	  }
-	  break;
+	//     /* Keep 'othersym' symbols at the front of the list.  */
+	//     if (newsym->othersym)
+	//       {
+	// 	newsym->next = add_sym_list;
+	// 	if (!add_sym_list)
+	// 	  add_sym_tail = &newsym->next;
+	// 	add_sym_list = newsym;
+	//       }
+	//     else
+	//       {
+	// 	*add_sym_tail = newsym;
+	// 	add_sym_tail = &newsym->next;
+	//       }
+	//     add_symbols++;
+	//   }
+	//   break;
 
-	case OPTION_CHANGE_START:
-	  change_start = parse_vma (optarg, "--change-start");
-	  break;
+	// case OPTION_CHANGE_START:
+	//   change_start = parse_vma (optarg, "--change-start");
+	//   break;
 
-	case OPTION_CHANGE_SECTION_ADDRESS:
-	case OPTION_CHANGE_SECTION_LMA:
-	case OPTION_CHANGE_SECTION_VMA:
-	  {
-	    struct section_list * p;
-	    unsigned int context = 0;
-	    const char *s;
-	    int len;
-	    char *name;
-	    char *option = NULL;
-	    bfd_vma val;
+	// case OPTION_CHANGE_SECTION_ADDRESS:
+	// case OPTION_CHANGE_SECTION_LMA:
+	// case OPTION_CHANGE_SECTION_VMA:
+	//   {
+	//     struct section_list * p;
+	//     unsigned int context = 0;
+	//     const char *s;
+	//     int len;
+	//     char *name;
+	//     char *option = NULL;
+	//     bfd_vma val;
 
-	    switch (c)
-	      {
-	      case OPTION_CHANGE_SECTION_ADDRESS:
-		option = "--change-section-address";
-		context = SECTION_CONTEXT_ALTER_LMA | SECTION_CONTEXT_ALTER_VMA;
-		break;
-	      case OPTION_CHANGE_SECTION_LMA:
-		option = "--change-section-lma";
-		context = SECTION_CONTEXT_ALTER_LMA;
-		break;
-	      case OPTION_CHANGE_SECTION_VMA:
-		option = "--change-section-vma";
-		context = SECTION_CONTEXT_ALTER_VMA;
-		break;
-	      }
+	//     switch (c)
+	//       {
+	//       case OPTION_CHANGE_SECTION_ADDRESS:
+	// 	option = "--change-section-address";
+	// 	context = SECTION_CONTEXT_ALTER_LMA | SECTION_CONTEXT_ALTER_VMA;
+	// 	break;
+	//       case OPTION_CHANGE_SECTION_LMA:
+	// 	option = "--change-section-lma";
+	// 	context = SECTION_CONTEXT_ALTER_LMA;
+	// 	break;
+	//       case OPTION_CHANGE_SECTION_VMA:
+	// 	option = "--change-section-vma";
+	// 	context = SECTION_CONTEXT_ALTER_VMA;
+	// 	break;
+	//       }
 
-	    s = strchr (optarg, '=');
-	    if (s == NULL)
-	      {
-		s = strchr (optarg, '+');
-		if (s == NULL)
-		  {
-		    s = strchr (optarg, '-');
-		    if (s == NULL)
-		      fatal (_("bad format for %s"), option);
-		  }
-	      }
-	    else
-	      {
-		/* Correct the context.  */
-		switch (c)
-		  {
-		  case OPTION_CHANGE_SECTION_ADDRESS:
-		    context = SECTION_CONTEXT_SET_LMA | SECTION_CONTEXT_SET_VMA;
-		    break;
-		  case OPTION_CHANGE_SECTION_LMA:
-		    context = SECTION_CONTEXT_SET_LMA;
-		    break;
-		  case OPTION_CHANGE_SECTION_VMA:
-		    context = SECTION_CONTEXT_SET_VMA;
-		    break;
-		  }
-	      }
+	//     s = strchr (optarg, '=');
+	//     if (s == NULL)
+	//       {
+	// 	s = strchr (optarg, '+');
+	// 	if (s == NULL)
+	// 	  {
+	// 	    s = strchr (optarg, '-');
+	// 	    if (s == NULL)
+	// 	      fatal (_("bad format for %s"), option);
+	// 	  }
+	//       }
+	//     else
+	//       {
+	// 	/* Correct the context.  */
+	// 	switch (c)
+	// 	  {
+	// 	  case OPTION_CHANGE_SECTION_ADDRESS:
+	// 	    context = SECTION_CONTEXT_SET_LMA | SECTION_CONTEXT_SET_VMA;
+	// 	    break;
+	// 	  case OPTION_CHANGE_SECTION_LMA:
+	// 	    context = SECTION_CONTEXT_SET_LMA;
+	// 	    break;
+	// 	  case OPTION_CHANGE_SECTION_VMA:
+	// 	    context = SECTION_CONTEXT_SET_VMA;
+	// 	    break;
+	// 	  }
+	//       }
 
-	    len = s - optarg;
-	    name = (char *) xmalloc (len + 1);
-	    strncpy (name, optarg, len);
-	    name[len] = '\0';
+	//     len = s - optarg;
+	//     name = (char *) xmalloc (len + 1);
+	//     strncpy (name, optarg, len);
+	//     name[len] = '\0';
 
-	    p = find_section_list (name, true, context);
+	//     p = find_section_list (name, true, context);
 
-	    val = parse_vma (s + 1, option);
-	    if (*s == '-')
-	      val = - val;
+	//     val = parse_vma (s + 1, option);
+	//     if (*s == '-')
+	//       val = - val;
 
-	    switch (c)
-	      {
-	      case OPTION_CHANGE_SECTION_ADDRESS:
-		p->vma_val = val;
-		/* Fall through.  */
+	//     switch (c)
+	//       {
+	//       case OPTION_CHANGE_SECTION_ADDRESS:
+	// 	p->vma_val = val;
+	// 	/* Fall through.  */
 
-	      case OPTION_CHANGE_SECTION_LMA:
-		p->lma_val = val;
-		break;
+	//       case OPTION_CHANGE_SECTION_LMA:
+	// 	p->lma_val = val;
+	// 	break;
 
-	      case OPTION_CHANGE_SECTION_VMA:
-		p->vma_val = val;
-		break;
-	      }
-	  }
-	  break;
+	//       case OPTION_CHANGE_SECTION_VMA:
+	// 	p->vma_val = val;
+	// 	break;
+	//       }
+	//   }
+	//   break;
 
-	case OPTION_CHANGE_ADDRESSES:
-	  change_section_address = parse_vma (optarg, "--change-addresses");
-	  change_start = change_section_address;
-	  break;
+	// case OPTION_CHANGE_ADDRESSES:
+	//   change_section_address = parse_vma (optarg, "--change-addresses");
+	//   change_start = change_section_address;
+	//   break;
 
 	case OPTION_CHANGE_WARNINGS:
 	  change_warn = true;
@@ -5418,24 +5468,24 @@ copy_main (int argc, char *argv[])
 	  change_leading_char = true;
 	  break;
 
-	case OPTION_COMPRESS_DEBUG_SECTIONS:
-	  if (optarg)
-	    {
-	      if (strcasecmp (optarg, "none") == 0)
-		do_debug_sections = decompress;
-	      else if (strcasecmp (optarg, "zlib") == 0)
-		do_debug_sections = compress_zlib;
-	      else if (strcasecmp (optarg, "zlib-gnu") == 0)
-		do_debug_sections = compress_gnu_zlib;
-	      else if (strcasecmp (optarg, "zlib-gabi") == 0)
-		do_debug_sections = compress_gabi_zlib;
-	      else
-		fatal (_("unrecognized --compress-debug-sections type `%s'"),
-		       optarg);
-	    }
-	  else
-	    do_debug_sections = compress;
-	  break;
+	// case OPTION_COMPRESS_DEBUG_SECTIONS:
+	//   if (optarg)
+	//     {
+	//       if (strcasecmp (optarg, "none") == 0)
+	// 	do_debug_sections = decompress;
+	//       else if (strcasecmp (optarg, "zlib") == 0)
+	// 	do_debug_sections = compress_zlib;
+	//       else if (strcasecmp (optarg, "zlib-gnu") == 0)
+	// 	do_debug_sections = compress_gnu_zlib;
+	//       else if (strcasecmp (optarg, "zlib-gabi") == 0)
+	// 	do_debug_sections = compress_gabi_zlib;
+	//       else
+	// 	fatal (_("unrecognized --compress-debug-sections type `%s'"),
+	// 	       optarg);
+	//     }
+	//   else
+	//     do_debug_sections = compress;
+	//   break;
 
 	case OPTION_DEBUGGING:
 	  convert_debugging = true;
@@ -5455,182 +5505,182 @@ copy_main (int argc, char *argv[])
 		   optarg);
 	  break;
 
-	case OPTION_GAP_FILL:
-	  {
-	    bfd_vma gap_fill_vma;
+	// case OPTION_GAP_FILL:
+	//   {
+	//     bfd_vma gap_fill_vma;
 
-	    gap_fill_vma = parse_vma (optarg, "--gap-fill");
-	    gap_fill = (bfd_byte) gap_fill_vma;
-	    if ((bfd_vma) gap_fill != gap_fill_vma)
-	      {
-		char buff[20];
+	//     gap_fill_vma = parse_vma (optarg, "--gap-fill");
+	//     gap_fill = (bfd_byte) gap_fill_vma;
+	//     if ((bfd_vma) gap_fill != gap_fill_vma)
+	//       {
+	// 	char buff[20];
 
-		sprintf_vma (buff, gap_fill_vma);
+	// 	sprintf_vma (buff, gap_fill_vma);
 
-		non_fatal (_("Warning: truncating gap-fill from 0x%s to 0x%x"),
-			   buff, gap_fill);
-	      }
-	    gap_fill_set = true;
-	  }
-	  break;
+	// 	non_fatal (_("Warning: truncating gap-fill from 0x%s to 0x%x"),
+	// 		   buff, gap_fill);
+	//       }
+	//     gap_fill_set = true;
+	//   }
+	//   break;
 
 	case OPTION_NO_CHANGE_WARNINGS:
 	  change_warn = false;
 	  break;
 
-	case OPTION_PAD_TO:
-	  pad_to = parse_vma (optarg, "--pad-to");
-	  pad_to_set = true;
-	  break;
+	// case OPTION_PAD_TO:
+	//   pad_to = parse_vma (optarg, "--pad-to");
+	//   pad_to_set = true;
+	//   break;
 
 	case OPTION_REMOVE_LEADING_CHAR:
 	  remove_leading_char = true;
 	  break;
 
-	case OPTION_REDEFINE_SYM:
-	  {
-	    /* Insert this redefinition onto redefine_specific_htab.  */
+	// case OPTION_REDEFINE_SYM:
+	//   {
+	//     /* Insert this redefinition onto redefine_specific_htab.  */
 
-	    int len;
-	    const char *s;
-	    const char *nextarg;
-	    char *source, *target;
+	//     int len;
+	//     const char *s;
+	//     const char *nextarg;
+	//     char *source, *target;
 
-	    s = strchr (optarg, '=');
-	    if (s == NULL)
-	      fatal (_("bad format for %s"), "--redefine-sym");
+	//     s = strchr (optarg, '=');
+	//     if (s == NULL)
+	//       fatal (_("bad format for %s"), "--redefine-sym");
 
-	    len = s - optarg;
-	    source = (char *) xmalloc (len + 1);
-	    strncpy (source, optarg, len);
-	    source[len] = '\0';
+	//     len = s - optarg;
+	//     source = (char *) xmalloc (len + 1);
+	//     strncpy (source, optarg, len);
+	//     source[len] = '\0';
 
-	    nextarg = s + 1;
-	    len = strlen (nextarg);
-	    target = (char *) xmalloc (len + 1);
-	    strcpy (target, nextarg);
+	//     nextarg = s + 1;
+	//     len = strlen (nextarg);
+	//     target = (char *) xmalloc (len + 1);
+	//     strcpy (target, nextarg);
 
-	    add_redefine_and_check ("--redefine-sym", source, target);
+	//     add_redefine_and_check ("--redefine-sym", source, target);
 
-	    free (source);
-	    free (target);
-	  }
-	  break;
+	//     free (source);
+	//     free (target);
+	//   }
+	//   break;
 
-	case OPTION_REDEFINE_SYMS:
-	  add_redefine_syms_file (optarg);
-	  break;
+	// case OPTION_REDEFINE_SYMS:
+	//   add_redefine_syms_file (optarg);
+	//   break;
 
-	case OPTION_SET_SECTION_FLAGS:
-	  {
-	    struct section_list *p;
-	    const char *s;
-	    int len;
-	    char *name;
+	// case OPTION_SET_SECTION_FLAGS:
+	//   {
+	//     struct section_list *p;
+	//     const char *s;
+	//     int len;
+	//     char *name;
 
-	    s = strchr (optarg, '=');
-	    if (s == NULL)
-	      fatal (_("bad format for %s"), "--set-section-flags");
+	//     s = strchr (optarg, '=');
+	//     if (s == NULL)
+	//       fatal (_("bad format for %s"), "--set-section-flags");
 
-	    len = s - optarg;
-	    name = (char *) xmalloc (len + 1);
-	    strncpy (name, optarg, len);
-	    name[len] = '\0';
+	//     len = s - optarg;
+	//     name = (char *) xmalloc (len + 1);
+	//     strncpy (name, optarg, len);
+	//     name[len] = '\0';
 
-	    p = find_section_list (name, true, SECTION_CONTEXT_SET_FLAGS);
+	//     p = find_section_list (name, true, SECTION_CONTEXT_SET_FLAGS);
 
-	    p->flags = parse_flags (s + 1);
-	  }
-	  break;
+	//     p->flags = parse_flags (s + 1);
+	//   }
+	//   break;
 
-	case OPTION_SET_SECTION_ALIGNMENT:
-	  {
-	    struct section_list *p;
-	    const char *s;
-	    int len;
-	    char *name;
-	    int palign, align;
+	// case OPTION_SET_SECTION_ALIGNMENT:
+	//   {
+	//     struct section_list *p;
+	//     const char *s;
+	//     int len;
+	//     char *name;
+	//     int palign, align;
 
-	    s = strchr (optarg, '=');
-	    if (s == NULL)
-	      fatal (_("bad format for --set-section-alignment: argument needed"));
+	//     s = strchr (optarg, '=');
+	//     if (s == NULL)
+	//       fatal (_("bad format for --set-section-alignment: argument needed"));
 
-	    align = atoi (s + 1);
-	    if (align <= 0)
-	      fatal (_("bad format for --set-section-alignment: numeric argument needed"));
+	//     align = atoi (s + 1);
+	//     if (align <= 0)
+	//       fatal (_("bad format for --set-section-alignment: numeric argument needed"));
 
-	    /* Convert integer alignment into a power-of-two alignment.  */
-	    palign = 0;
-	    while ((align & 1) == 0)
-	      {
-	    	align >>= 1;
-	    	++palign;
-	      }
+	//     /* Convert integer alignment into a power-of-two alignment.  */
+	//     palign = 0;
+	//     while ((align & 1) == 0)
+	//       {
+	//     	align >>= 1;
+	//     	++palign;
+	//       }
 
-	    if (align != 1)
-	      /* Number has more than on 1, i.e. wasn't a power of 2.  */
-	      fatal (_("bad format for --set-section-alignment: alignment is not a power of two"));
+	//     if (align != 1)
+	//       /* Number has more than on 1, i.e. wasn't a power of 2.  */
+	//       fatal (_("bad format for --set-section-alignment: alignment is not a power of two"));
 
-	    /* Add the alignment setting to the section list.  */
-	    len = s - optarg;
-	    name = (char *) xmalloc (len + 1);
-	    strncpy (name, optarg, len);
-	    name[len] = '\0';
+	//     /* Add the alignment setting to the section list.  */
+	//     len = s - optarg;
+	//     name = (char *) xmalloc (len + 1);
+	//     strncpy (name, optarg, len);
+	//     name[len] = '\0';
 
-	    p = find_section_list (name, true, SECTION_CONTEXT_SET_ALIGNMENT);
-	    if (p)
-	      p->alignment = palign;
-	  }
-	  break;
+	//     p = find_section_list (name, true, SECTION_CONTEXT_SET_ALIGNMENT);
+	//     if (p)
+	//       p->alignment = palign;
+	//   }
+	//   break;
 
-	case OPTION_RENAME_SECTION:
-	  {
-	    flagword flags;
-	    const char *eq, *fl;
-	    char *old_name;
-	    char *new_name;
-	    unsigned int len;
+	// case OPTION_RENAME_SECTION:
+	//   {
+	//     flagword flags;
+	//     const char *eq, *fl;
+	//     char *old_name;
+	//     char *new_name;
+	//     unsigned int len;
 
-	    eq = strchr (optarg, '=');
-	    if (eq == NULL)
-	      fatal (_("bad format for %s"), "--rename-section");
+	//     eq = strchr (optarg, '=');
+	//     if (eq == NULL)
+	//       fatal (_("bad format for %s"), "--rename-section");
 
-	    len = eq - optarg;
-	    if (len == 0)
-	      fatal (_("bad format for %s"), "--rename-section");
+	//     len = eq - optarg;
+	//     if (len == 0)
+	//       fatal (_("bad format for %s"), "--rename-section");
 
-	    old_name = (char *) xmalloc (len + 1);
-	    strncpy (old_name, optarg, len);
-	    old_name[len] = 0;
+	//     old_name = (char *) xmalloc (len + 1);
+	//     strncpy (old_name, optarg, len);
+	//     old_name[len] = 0;
 
-	    eq++;
-	    fl = strchr (eq, ',');
-	    if (fl)
-	      {
-		flags = parse_flags (fl + 1);
-		len = fl - eq;
-	      }
-	    else
-	      {
-		flags = -1;
-		len = strlen (eq);
-	      }
+	//     eq++;
+	//     fl = strchr (eq, ',');
+	//     if (fl)
+	//       {
+	// 	flags = parse_flags (fl + 1);
+	// 	len = fl - eq;
+	//       }
+	//     else
+	//       {
+	// 	flags = -1;
+	// 	len = strlen (eq);
+	//       }
 
-	    if (len == 0)
-	      fatal (_("bad format for %s"), "--rename-section");
+	//     if (len == 0)
+	//       fatal (_("bad format for %s"), "--rename-section");
 
-	    new_name = (char *) xmalloc (len + 1);
-	    strncpy (new_name, eq, len);
-	    new_name[len] = 0;
+	//     new_name = (char *) xmalloc (len + 1);
+	//     strncpy (new_name, eq, len);
+	//     new_name[len] = 0;
 
-	    add_section_rename (old_name, new_name, flags);
-	  }
-	  break;
+	//     add_section_rename (old_name, new_name, flags);
+	//   }
+	//   break;
 
-	case OPTION_SET_START:
-	  set_start = parse_vma (optarg, "--set-start");
-	  set_start_set = true;
-	  break;
+	// case OPTION_SET_START:
+	//   set_start = parse_vma (optarg, "--set-start");
+	//   set_start_set = true;
+	//   break;
 
 	case OPTION_SREC_LEN:
 	  _bfd_srec_len = parse_vma (optarg, "--srec-len");
@@ -5640,33 +5690,33 @@ copy_main (int argc, char *argv[])
 	  _bfd_srec_forceS3 = true;
 	  break;
 
-	case OPTION_STRIP_SYMBOLS:
-	  add_specific_symbols (optarg, strip_specific_htab,
-				&strip_specific_buffer);
-	  break;
+	// case OPTION_STRIP_SYMBOLS:
+	//   add_specific_symbols (optarg, strip_specific_htab,
+	// 			&strip_specific_buffer);
+	//   break;
 
-	case OPTION_STRIP_UNNEEDED_SYMBOLS:
-	  add_specific_symbols (optarg, strip_unneeded_htab,
-				&strip_unneeded_buffer);
-	  break;
+	// case OPTION_STRIP_UNNEEDED_SYMBOLS:
+	//   add_specific_symbols (optarg, strip_unneeded_htab,
+	// 			&strip_unneeded_buffer);
+	//   break;
 
-	case OPTION_KEEP_SYMBOLS:
-	  add_specific_symbols (optarg, keep_specific_htab,
-				&keep_specific_buffer);
-	  break;
+	// case OPTION_KEEP_SYMBOLS:
+	//   add_specific_symbols (optarg, keep_specific_htab,
+	// 			&keep_specific_buffer);
+	//   break;
 
-	case OPTION_KEEP_SECTION_SYMBOLS:
-	  keep_section_symbols = true;
-	  break;
+	// case OPTION_KEEP_SECTION_SYMBOLS:
+	//   keep_section_symbols = true;
+	//   break;
 
 	case OPTION_LOCALIZE_HIDDEN:
 	  localize_hidden = true;
 	  break;
 
-	case OPTION_LOCALIZE_SYMBOLS:
-	  add_specific_symbols (optarg, localize_specific_htab,
-				&localize_specific_buffer);
-	  break;
+	// case OPTION_LOCALIZE_SYMBOLS:
+	//   add_specific_symbols (optarg, localize_specific_htab,
+	// 			&localize_specific_buffer);
+	//   break;
 
 	case OPTION_LONG_SECTION_NAMES:
 	  if (!strcmp ("enable", optarg))
@@ -5679,11 +5729,11 @@ copy_main (int argc, char *argv[])
 	    fatal (_("unknown long section names option '%s'"), optarg);
 	  break;
 
-	case OPTION_GLOBALIZE_SYMBOLS:
-	  use_globalize = true;
-	  add_specific_symbols (optarg, globalize_specific_htab,
-				&globalize_specific_buffer);
-	  break;
+	// case OPTION_GLOBALIZE_SYMBOLS:
+	//   use_globalize = true;
+	//   add_specific_symbols (optarg, globalize_specific_htab,
+	// 			&globalize_specific_buffer);
+	//   break;
 
 	case OPTION_KEEPGLOBAL_SYMBOLS:
 	  use_keep_global = true;
@@ -5696,23 +5746,23 @@ copy_main (int argc, char *argv[])
 				&weaken_specific_buffer);
 	  break;
 
-	case OPTION_ALT_MACH_CODE:
-	  use_alt_mach_code = strtoul (optarg, NULL, 0);
-	  if (use_alt_mach_code == 0)
-	    fatal (_("unable to parse alternative machine code"));
-	  break;
+	// case OPTION_ALT_MACH_CODE:
+	//   use_alt_mach_code = strtoul (optarg, NULL, 0);
+	//   if (use_alt_mach_code == 0)
+	//     fatal (_("unable to parse alternative machine code"));
+	//   break;
 
-	case OPTION_PREFIX_SYMBOLS:
-	  prefix_symbols_string = optarg;
-	  break;
+	// case OPTION_PREFIX_SYMBOLS:
+	//   prefix_symbols_string = optarg;
+	//   break;
 
-	case OPTION_PREFIX_SECTIONS:
-	  prefix_sections_string = optarg;
-	  break;
+	// case OPTION_PREFIX_SECTIONS:
+	//   prefix_sections_string = optarg;
+	//   break;
 
-	case OPTION_PREFIX_ALLOC_SECTIONS:
-	  prefix_alloc_sections_string = optarg;
-	  break;
+	// case OPTION_PREFIX_ALLOC_SECTIONS:
+	//   prefix_alloc_sections_string = optarg;
+	//   break;
 
 	case OPTION_READONLY_TEXT:
 	  bfd_flags_to_set |= WP_TEXT;
@@ -5760,54 +5810,54 @@ copy_main (int argc, char *argv[])
 	  pe_file_alignment = parse_vma (optarg, "--file-alignment");
 	  break;
 
-	case OPTION_HEAP:
-	  {
-	    char *end;
-	    pe_heap_reserve = strtoul (optarg, &end, 0);
-	    if (end == optarg
-		|| (*end != '.' && *end != '\0'))
-	      non_fatal (_("%s: invalid reserve value for --heap"),
-			 optarg);
-	    else if (*end != '\0')
-	      {
-		pe_heap_commit = strtoul (end + 1, &end, 0);
-		if (*end != '\0')
-		  non_fatal (_("%s: invalid commit value for --heap"),
-			     optarg);
-	      }
-	  }
-	  break;
+	// case OPTION_HEAP:
+	//   {
+	//     char *end;
+	//     pe_heap_reserve = strtoul (optarg, &end, 0);
+	//     if (end == optarg
+	// 	|| (*end != '.' && *end != '\0'))
+	//       non_fatal (_("%s: invalid reserve value for --heap"),
+	// 		 optarg);
+	//     else if (*end != '\0')
+	//       {
+	// 	pe_heap_commit = strtoul (end + 1, &end, 0);
+	// 	if (*end != '\0')
+	// 	  non_fatal (_("%s: invalid commit value for --heap"),
+	// 		     optarg);
+	//       }
+	//   }
+	//   break;
 
-	case OPTION_IMAGE_BASE:
-	  pe_image_base = parse_vma (optarg, "--image-base");
-	  break;
+	// case OPTION_IMAGE_BASE:
+	//   pe_image_base = parse_vma (optarg, "--image-base");
+	//   break;
 
 	case OPTION_PE_SECTION_ALIGNMENT:
 	  pe_section_alignment = parse_vma (optarg,
 					    "--section-alignment");
 	  break;
 
-	case OPTION_SUBSYSTEM:
-	  set_pe_subsystem (optarg);
-	  break;
+	// case OPTION_SUBSYSTEM:
+	//   set_pe_subsystem (optarg);
+	//   break;
 
-	case OPTION_STACK:
-	  {
-	    char *end;
-	    pe_stack_reserve = strtoul (optarg, &end, 0);
-	    if (end == optarg
-		|| (*end != '.' && *end != '\0'))
-	      non_fatal (_("%s: invalid reserve value for --stack"),
-			 optarg);
-	    else if (*end != '\0')
-	      {
-		pe_stack_commit = strtoul (end + 1, &end, 0);
-		if (*end != '\0')
-		  non_fatal (_("%s: invalid commit value for --stack"),
-			     optarg);
-	      }
-	  }
-	  break;
+	// case OPTION_STACK:
+	//   {
+	//     char *end;
+	//     pe_stack_reserve = strtoul (optarg, &end, 0);
+	//     if (end == optarg
+	// 	|| (*end != '.' && *end != '\0'))
+	//       non_fatal (_("%s: invalid reserve value for --stack"),
+	// 		 optarg);
+	//     else if (*end != '\0')
+	//       {
+	// 	pe_stack_commit = strtoul (end + 1, &end, 0);
+	// 	if (*end != '\0')
+	// 	  non_fatal (_("%s: invalid commit value for --stack"),
+	// 		     optarg);
+	//       }
+	//   }
+	//   break;
 
 	case OPTION_VERILOG_DATA_WIDTH:
 	  VerilogDataWidth = parse_vma (optarg, "--verilog-data-width");
