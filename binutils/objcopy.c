@@ -13,7 +13,6 @@
     // {"weaken-symbol", required_argument, 0, 'W'},
     // {"interleave-width", required_argument, 0, OPTION_INTERLEAVE_WIDTH},
 // {"interleave", optional_argument, 0, 'i'},
-// {"gap-fill", required_argument, 0, OPTION_GAP_FILL},
 // {"pad-to", required_argument, 0, OPTION_PAD_TO},
     // {"set-start", required_argument, 0, OPTION_SET_START},
     // {"change-start", required_argument, 0, OPTION_CHANGE_START},
@@ -499,7 +498,7 @@ static struct option copy_options[] =
   {"extract-symbol", no_argument, 0, OPTION_EXTRACT_SYMBOL},
   {"file-alignment", required_argument, 0, OPTION_FILE_ALIGNMENT},
   {"format", required_argument, 0, 'F'}, /* Obsolete */
-  // {"gap-fill", required_argument, 0, OPTION_GAP_FILL},
+  {"gap-fill", required_argument, 0, OPTION_GAP_FILL},
   // {"globalize-symbol", required_argument, 0, OPTION_GLOBALIZE_SYMBOL},
   // {"globalize-symbols", required_argument, 0, OPTION_GLOBALIZE_SYMBOLS},
   // {"heap", required_argument, 0, OPTION_HEAP},
@@ -5505,24 +5504,24 @@ copy_main (int argc, char *argv[])
 		   optarg);
 	  break;
 
-	// case OPTION_GAP_FILL:
-	//   {
-	//     bfd_vma gap_fill_vma;
+	case OPTION_GAP_FILL:
+	  {
+	    bfd_vma gap_fill_vma;
 
-	//     gap_fill_vma = parse_vma (optarg, "--gap-fill");
-	//     gap_fill = (bfd_byte) gap_fill_vma;
-	//     if ((bfd_vma) gap_fill != gap_fill_vma)
-	//       {
-	// 	char buff[20];
+	    gap_fill_vma = parse_vma (optarg, "--gap-fill");
+	    gap_fill = (bfd_byte) gap_fill_vma;
+	    if ((bfd_vma) gap_fill != gap_fill_vma)
+	      {
+		char buff[20];
 
-	// 	sprintf_vma (buff, gap_fill_vma);
+		sprintf_vma (buff, gap_fill_vma);
 
-	// 	non_fatal (_("Warning: truncating gap-fill from 0x%s to 0x%x"),
-	// 		   buff, gap_fill);
-	//       }
-	//     gap_fill_set = true;
-	//   }
-	//   break;
+		non_fatal (_("Warning: truncating gap-fill from 0x%s to 0x%x"),
+			   buff, gap_fill);
+	      }
+	    gap_fill_set = true;
+	  }
+	  break;
 
 	case OPTION_NO_CHANGE_WARNINGS:
 	  change_warn = false;

@@ -1,3 +1,4 @@
+// removed @
 /* size.c -- report size of various sections of an executable file.
    Copyright (C) 1991-2021 Free Software Foundation, Inc.
 

@@ -1,3 +1,7 @@
+// removed
+// {"output-separator", required_argument, NULL, 's'},
+// @
+
 /* strings -- print the strings of printable characters in files
    Copyright (C) 1993-2021 Free Software Foundation, Inc.
 
@@ -84,7 +88,7 @@
       )
 
 #ifndef errno
-extern int errno;
+    extern int errno;
 #endif
 
 /* The BFD section flags that identify an initialized data section.  */
@@ -128,7 +132,7 @@ static struct option long_options[] =
   {"include-all-whitespace", no_argument, NULL, 'w'},
   {"encoding", required_argument, NULL, 'e'},
   {"target", required_argument, NULL, 'T'},
-  {"output-separator", required_argument, NULL, 's'},
+  // {"output-separator", required_argument, NULL, 's'},
   {"help", no_argument, NULL, 'h'},
   {"version", no_argument, NULL, 'v'},
   {NULL, 0, NULL, 0}
@@ -240,9 +244,9 @@ main (int argc, char **argv)
 	  encoding = optarg[0];
 	  break;
 
-	case 's':
-	  output_separator = optarg;
-          break;
+	// case 's':
+	//   output_separator = optarg;
+  //         break;
 
 	case 'V':
 	case 'v':

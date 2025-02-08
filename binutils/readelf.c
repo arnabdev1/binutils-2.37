@@ -1,3 +1,14 @@
+// removed
+// {"demangle", optional_argument, 0, 'C'},
+// 	{"hex-dump", required_argument, 0, 'x'},
+// 	{"string-dump", required_argument, 0, 'p'},
+// 	{"relocated-dump", required_argument, 0, 'R'},
+// 	-w, @
+//   {"ctf",	       required_argument, 0, OPTION_CTF_DUMP},
+//   {"ctf-symbols",      required_argument, 0, OPTION_CTF_SYMBOLS},
+//   {"ctf-strings",      required_argument, 0, OPTION_CTF_STRINGS},
+//   {"ctf-parent",       required_argument, 0, OPTION_CTF_PARENT},
+
 /* readelf.c -- display contents of an ELF format file
    Copyright (C) 1998-2021 Free Software Foundation, Inc.
 
@@ -172,7 +183,7 @@
 #define offsetof(TYPE, MEMBER) ((size_t) &(((TYPE *) 0)->MEMBER))
 #endif
 
-typedef struct elf_section_list
+	typedef struct elf_section_list
 {
   Elf_Internal_Shdr *        hdr;
   struct elf_section_list *  next;
@@ -4643,7 +4654,7 @@ static struct option options[] =
     field in order to make adding new options easier.  */
   {"arch-specific",    no_argument, 0, 'A'},
   {"all",	       no_argument, 0, 'a'},
-  {"demangle",         optional_argument, 0, 'C'},
+//   {"demangle",         optional_argument, 0, 'C'},
   {"archive-index",    no_argument, 0, 'c'},
   {"use-dynamic",      no_argument, 0, 'D'},
   {"dynamic",	       no_argument, 0, 'd'},
@@ -4659,8 +4670,8 @@ static struct option options[] =
   {"full-section-name",no_argument, 0, 'N'},
   {"notes",	       no_argument, 0, 'n'},
   {"process-links",    no_argument, 0, 'P'},
-  {"string-dump",      required_argument, 0, 'p'},
-  {"relocated-dump",   required_argument, 0, 'R'},
+//   {"string-dump",      required_argument, 0, 'p'},
+//   {"relocated-dump",   required_argument, 0, 'R'},
   {"relocs",	       no_argument, 0, 'r'},
   {"section-headers",  no_argument, 0, 'S'},
   {"sections",	       no_argument, 0, 'S'},
@@ -4672,7 +4683,7 @@ static struct option options[] =
   {"version-info",     no_argument, 0, 'V'},
   {"version",	       no_argument, 0, 'v'},
   {"wide",	       no_argument, 0, 'W'},
-  {"hex-dump",	       required_argument, 0, 'x'},
+//   {"hex-dump",	       required_argument, 0, 'x'},
   {"decompress",       no_argument, 0, 'z'},
 
   {"no-demangle",      no_argument, 0, OPTION_NO_DEMANGLING},
@@ -4686,10 +4697,10 @@ static struct option options[] =
   {"dwarf-start",      required_argument, 0, OPTION_DWARF_START},
   {"dwarf-check",      no_argument, 0, OPTION_DWARF_CHECK},
 #ifdef ENABLE_LIBCTF
-  {"ctf",	       required_argument, 0, OPTION_CTF_DUMP},
-  {"ctf-symbols",      required_argument, 0, OPTION_CTF_SYMBOLS},
-  {"ctf-strings",      required_argument, 0, OPTION_CTF_STRINGS},
-  {"ctf-parent",       required_argument, 0, OPTION_CTF_PARENT},
+//   {"ctf",	       required_argument, 0, OPTION_CTF_DUMP},
+//   {"ctf-symbols",      required_argument, 0, OPTION_CTF_SYMBOLS},
+//   {"ctf-strings",      required_argument, 0, OPTION_CTF_STRINGS},
+//   {"ctf-parent",       required_argument, 0, OPTION_CTF_PARENT},
 #endif
   {"sym-base",	       optional_argument, 0, OPTION_SYM_BASE},
 
@@ -5010,31 +5021,31 @@ parse_args (struct dump_data *dumpdata, int argc, char ** argv)
 	  process_links = true;
 	  do_follow_links = true;
 	  break;
-	case 'x':
-	  request_dump (dumpdata, HEX_DUMP);
-	  break;
-	case 'p':
-	  request_dump (dumpdata, STRING_DUMP);
-	  break;
-	case 'R':
-	  request_dump (dumpdata, RELOC_DUMP);
-	  break;
+	// case 'x':
+	//   request_dump (dumpdata, HEX_DUMP);
+	//   break;
+	// case 'p':
+	//   request_dump (dumpdata, STRING_DUMP);
+	//   break;
+	// case 'R':
+	//   request_dump (dumpdata, RELOC_DUMP);
+	//   break;
 	case 'z':
 	  decompress_dumps = true;
 	  break;
-	case 'w':
-	  do_dump = true;
-	  if (optarg == NULL)
-	    {
-	      do_debugging = true;
-	      dwarf_select_sections_all ();
-	    }
-	  else
-	    {
-	      do_debugging = false;
-	      dwarf_select_sections_by_letters (optarg);
-	    }
-	  break;
+	// case 'w':
+	//   do_dump = true;
+	//   if (optarg == NULL)
+	//     {
+	//       do_debugging = true;
+	//       dwarf_select_sections_all ();
+	//     }
+	//   else
+	//     {
+	//       do_debugging = false;
+	//       dwarf_select_sections_by_letters (optarg);
+	//     }
+	//   break;
 	case OPTION_DEBUG_DUMP:
 	  do_dump = true;
 	  if (optarg == NULL)
@@ -5065,22 +5076,22 @@ parse_args (struct dump_data *dumpdata, int argc, char ** argv)
 	case OPTION_DWARF_CHECK:
 	  dwarf_check = true;
 	  break;
-	case OPTION_CTF_DUMP:
-	  do_ctf = true;
-	  request_dump (dumpdata, CTF_DUMP);
-	  break;
-	case OPTION_CTF_SYMBOLS:
-	  free (dump_ctf_symtab_name);
-	  dump_ctf_symtab_name = strdup (optarg);
-	  break;
-	case OPTION_CTF_STRINGS:
-	  free (dump_ctf_strtab_name);
-	  dump_ctf_strtab_name = strdup (optarg);
-	  break;
-	case OPTION_CTF_PARENT:
-	  free (dump_ctf_parent_name);
-	  dump_ctf_parent_name = strdup (optarg);
-	  break;
+	// case OPTION_CTF_DUMP:
+	//   do_ctf = true;
+	//   request_dump (dumpdata, CTF_DUMP);
+	//   break;
+	// case OPTION_CTF_SYMBOLS:
+	//   free (dump_ctf_symtab_name);
+	//   dump_ctf_symtab_name = strdup (optarg);
+	//   break;
+	// case OPTION_CTF_STRINGS:
+	//   free (dump_ctf_strtab_name);
+	//   dump_ctf_strtab_name = strdup (optarg);
+	//   break;
+	// case OPTION_CTF_PARENT:
+	//   free (dump_ctf_parent_name);
+	//   dump_ctf_parent_name = strdup (optarg);
+	//   break;
 	case OPTION_DYN_SYMS:
 	  do_dyn_syms = true;
 	  break;
@@ -5104,19 +5115,19 @@ parse_args (struct dump_data *dumpdata, int argc, char ** argv)
 	case 'T':
 	  do_not_show_symbol_truncation = true;
 	  break;
-	case 'C':
-	  do_demangle = true;
-	  if (optarg != NULL)
-	    {
-	      enum demangling_styles style;
+	// case 'C':
+	//   do_demangle = true;
+	//   if (optarg != NULL)
+	//     {
+	//       enum demangling_styles style;
 
-	      style = cplus_demangle_name_to_style (optarg);
-	      if (style == unknown_demangling)
-		error (_("unknown demangling style `%s'"), optarg);
+	//       style = cplus_demangle_name_to_style (optarg);
+	//       if (style == unknown_demangling)
+	// 	error (_("unknown demangling style `%s'"), optarg);
 
-	      cplus_demangle_set_style (style);
-	    }
-	  break;
+	//       cplus_demangle_set_style (style);
+	//     }
+	//   break;
 	case OPTION_NO_DEMANGLING:
 	  do_demangle = false;
 	  break;
