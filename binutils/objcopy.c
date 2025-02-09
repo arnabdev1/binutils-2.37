@@ -375,7 +375,7 @@ enum command_line_switch
   OPTION_EXTRACT_SYMBOL,
   OPTION_FILE_ALIGNMENT,
   OPTION_FORMATS_INFO,
-  // OPTION_GAP_FILL,
+  OPTION_GAP_FILL,
   // OPTION_GLOBALIZE_SYMBOL,
   // OPTION_GLOBALIZE_SYMBOLS,
   OPTION_HEAP,
@@ -473,7 +473,7 @@ static struct option copy_options[] =
   // {"add-symbol", required_argument, 0, OPTION_ADD_SYMBOL},
   // {"adjust-section-vma", required_argument, 0, OPTION_CHANGE_SECTION_ADDRESS},
   // {"adjust-start", required_argument, 0, OPTION_CHANGE_START},
-  {"adjust-vma", required_argument, 0, OPTION_CHANGE_ADDRESSES},
+  // {"adjust-vma", required_argument, 0, OPTION_CHANGE_ADDRESSES},
   {"adjust-warnings", no_argument, 0, OPTION_CHANGE_WARNINGS},
   // {"alt-machine-code", required_argument, 0, OPTION_ALT_MACH_CODE},
   {"binary-architecture", required_argument, 0, 'B'},
@@ -558,7 +558,7 @@ static struct option copy_options[] =
   {"strip-unneeded", no_argument, 0, OPTION_STRIP_UNNEEDED},
   // {"strip-unneeded-symbol", required_argument, 0, OPTION_STRIP_UNNEEDED_SYMBOL},
   // {"strip-unneeded-symbols", required_argument, 0, OPTION_STRIP_UNNEEDED_SYMBOLS},
-  {"subsystem", required_argument, 0, OPTION_SUBSYSTEM},
+  // {"subsystem", required_argument, 0, OPTION_SUBSYSTEM},
   {"target", required_argument, 0, 'F'},
   // {"update-section", required_argument, 0, OPTION_UPDATE_SECTION},
   {"verbose", no_argument, 0, 'v'},
@@ -5864,9 +5864,9 @@ copy_main (int argc, char *argv[])
 	    fatal (_("verilog data width must be at least 1 byte"));
 	  break;
 
-	case 0:
-	  /* We've been given a long option.  */
-	  break;
+	// case 0:
+	//   /* We've been given a long option.  */
+	//   break;
 
 	case 'H':
 	case 'h':
